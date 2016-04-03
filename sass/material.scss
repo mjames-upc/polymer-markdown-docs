@@ -1,0 +1,124 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "vars";
+
+$materialPurple: #3e50b4;
+$materialLightPurple: #c4c9e8;
+$materialLighestPurple: #e8eaf6;
+
+$materialOrange: #ff5621;
+$materialLightOrange: #ffcbbb;
+$materialLightestOrange: #fbe9e7;
+
+$materialPink: #e81d62;
+$materialLightPink: #f7bacf;
+$materialLightestPink: #fce4ec;
+
+$materialYellow: #f3b300;
+$materialLightYellow: #fbe7b1;
+$materialLightestYellow: #fff8e1;
+
+$materialGreen: #00bea4;
+$materialLightGreen: #a6ffea;
+$materialLightestGreen: #e0f2f1;
+
+$materialTeal: #00bbd3;
+$materialLightTeal: #b1eaf1;
+$materialLightestTeal: #e0f7fa;
+
+$materialBlue: #4184f3;
+$materialLightBlue: #c5d9fb;
+$materialLightestBlue: #e3f2fd;
+
+.material-purple {
+  background-color: $materialPurple;
+}
+
+.material-purple-light {
+  background-color: $materialLightPurple;
+  // border-color: $materialLightPurple;
+}
+.material-purple-lightest {
+  background-color: $materialLighestPurple;
+}
+
+.material-orange {
+  background-color: $materialOrange;
+  // border-color: $materialOrange;
+}
+.material-orange-light {
+  background-color: $materialLightOrange;
+  // border-color: $materialLightOrange;
+}
+.material-orange-lightest {
+  background-color: $materialLightestOrange;
+}
+
+.material-pink {
+  background-color: $materialPink;
+  // border-color: $materialPink;
+}
+.material-pink-light {
+  background-color: $materialLightPink;
+  // border-color: $materialLightPink;
+}
+.material-pink-lightest {
+  background-color: $materialLightestPink;
+}
+
+.material-yellow {
+  background-color: $materialYellow;
+  // border-color: $materialYellow;
+}
+.material-yellow-light {
+  background-color: $materialLightYellow;
+  // border-color: $materialLightYellow;
+}
+.material-yellow-lightest {
+  background-color: $materialLightestYellow;
+}
+
+.material-green {
+  background-color: $materialGreen;
+  // border-color: $materialGreen;
+}
+.material-green-light {
+  background-color: $materialLightGreen;
+  // border-color: $materialLightGreen;
+}
+.material-green-lightest {
+  background-color: $materialLightestGreen;
+}
+
+.material-teal {
+  background-color: $materialTeal;
+  // border-color: $materialTeal;
+}
+.material-teal-light {
+  background-color: $materialLightTeal;
+  // border-color: $materialLightTeal;
+}
+.material-teal-lightest {
+  background-color: $materialLightestTeal;
+}
+
+.material-blue {
+  background-color: $materialBlue;
+  // border-color: $materialBlue;
+}
+.material-blue-light {
+  background-color: $materialLightBlue;
+  // border-color: $materialLightBlue;
+}
+.material-blue-lightest {
+  background-color: $materialLightestBlue;
+}
+

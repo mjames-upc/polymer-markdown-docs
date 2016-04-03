@@ -1,0 +1,22 @@
+<footer>
+  <div>
+    <div class="links">
+      <a href="https://www.facebook.com/unidata" title="Unidata on Facebook" tabindex="-1"><paper-button><core-icon icon="social:post-facebook"></core-icon>Facebook</paper-button></a>
+      <a href="https://twitter.com/intent/follow?screen_name=unidata" data-twitter-follow title="Follow @Unidata on Twitter" tabindex="-1"><paper-button><core-icon icon="social:post-twitter"></core-icon>Twitter</paper-button></a>
+      <a href="https://github.com/Unidata/awips2"><paper-button class="github" tabindex="-1"><core-icon icon="social:post-github"></core-icon>GitHub</paper-button></a>
+      <a href="https://github.com/Unidata/awips2/issues/new" tabindex="-1"><paper-button><core-icon icon="bug-report"></core-icon>File a bug</paper-button></a>
+    </div>
+
+  </div>
+</footer>
+
+
+{% for js in page.js %}
+<script {% if js.defer %}defer{% endif %} src="{{js.src}}"></script>
+{% endfor %}
+
+{% if page.layout != 'home' %}
+<script src="{{ site.baseurl }}/js/prettify/prettify.js"></script>
+{% endif %}
+<!-- <script src="{{ site.baseurl }}/js/bower_components/smoothscroll/smoothscroll.js"></script> -->
+<script src="{{ site.baseurl }}/js/app.js?{{site.time | date: '%Y%m%d'}}"></script>

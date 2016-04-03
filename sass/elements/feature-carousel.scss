@@ -1,0 +1,87 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "compass/css3/transition";
+
+@import "elements";
+
+$gray-1: #e6e6e6;
+$size: 10px;
+$transitionTime: 1s;
+
+:host {
+  display: block;
+  position: relative;
+  height: 310px;
+  @include transform(translateZ(0));
+}
+
+polyfill-next-selector { content: ':host > core-selector > *'; }
+::content > * {
+  display: -webkit-flex;
+  display: flex;
+  transform: translate3d(15px,0,0);
+  @include transition(all $transitionTime ease-in-out);
+  opacity: 0;
+  visibility: hidden;
+  //pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+polyfill-next-selector { content: ':host .core-selected'; }
+::content > .core-selected {
+  opacity: 1;
+  visibility: visible;
+  z-index: 0;
+  transform: translate3d(0,0,0);
+}
+
+#paginator {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+}
+
+.circle {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  border: 1px solid $gray-1;
+  @include transition(background-color $transitionTime ease-in-out);
+  margin: 0 3px;
+
+  &.active {
+    background-color: $gray-1 !important;
+  }
+}
+
+@media only screen and (max-width: $break-medium) {
+  polyfill-next-selector { content: ':host > core-selector > *'; }
+  ::content > * {
+    @include flex-direction(column);
+    width: 100%;
+  }
+  polyfill-unscoped-rule {
+    content: '#feature :host';
+    height: 680px;
+  }
+  :host {
+    height: 680px !important;
+  }
+  #paginator {
+    width: 100%;
+  }
+}

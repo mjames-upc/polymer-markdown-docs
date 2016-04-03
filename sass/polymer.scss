@@ -1,0 +1,125 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "vars";
+
+@import "typography";
+
+// .platform {
+//   color: $platform-color;
+//   // fill: $platform-color;
+// }
+
+// .elements-using {
+//   color: $using-elements-color;
+//   // fill: $using-elements-color;
+// }
+
+// .elements-creating {
+//   color: $creating-elements-color;
+//   // fill: $creating-elements-color;
+// }
+
+.start {
+  color: $getting-started-color;
+}
+
+.elements {
+  color: $elements-color;
+}
+
+.guide {
+  color: $guides-resources-color;
+}
+
+.main-bg {
+  background-color: $main-bg !important;
+}
+
+.main-purple {
+  background-color: $main-purple;
+
+  paper-button {
+    //background: rgba(255,255,255,0.1) !important;
+    background: #262742 !important;
+    color: white;
+    fill: currentcolor;
+
+    &:hover {
+      background: rgb(58, 59, 86) !important;
+    }
+  }
+}
+
+code, pre {
+  color: #9f499b;
+  // padding: 10px 5px;
+  font-family: $font-family-code;
+}
+
+pre, .prettyprint {
+  // background-color: $main-purple;
+  background-color: $gray-medium;
+  padding: 16px;
+  margin: 30px 0;
+
+  .typ, .inline {
+    // color: #bec945;
+    color: #9c27b0;
+  }
+  .pun {
+    color: #455a64;
+  }
+  .str, .string {
+    color: #689f38;
+  }
+  .pln {
+    color: #455a64;
+  }
+  .kwd {
+    color: #00838f;
+  }
+  .tag {
+    color: #00838f;
+  }
+  .atn, .attribute-name {
+    color: #455a64;
+  }
+  .atv, .attribute-value {
+    color: #689f38;
+  }
+  .com, .comment {
+    color: #d81b60;
+  }
+}
+
+.polymer-status-badge {
+  height: 20px;
+  background-color: rgba(0,0,0,.26);
+  text-transform: uppercase;
+  border-radius: 2px;
+  font-size: 11px;
+  padding: 10px;
+  @include display-flex;
+  @include justify-content(center);
+  @include align-items(center);
+  line-height: 1;
+  color: #fff;
+  box-sizing: border-box;
+  margin: 0 24px;
+}
+
+
+@media only screen and (min-width: $break-small + 1)  {
+  main.polymer-0_5-content scroll-area article {
+    padding-top: 60px;
+  }
+
+}

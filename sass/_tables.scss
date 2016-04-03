@@ -1,0 +1,70 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+/* Force table to not be like tables anymore */
+.responsive-table,
+.responsive-table thead,
+.responsive-table tbody,
+.responsive-table th,
+.responsive-table td,
+.responsive-table tr {
+  display: block;
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+.responsive-table th {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.responsive-table td {
+  /* Behave  like a "row" */
+  position: relative;
+  padding-left: 40%;
+}
+
+.responsive-table td:before {
+  /* Now like a table header */
+  position: absolute;
+  left: 0;
+  width: 35%;
+  padding-right: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.responsive-table tr td:last-child {
+  border-bottom: 1px solid $main-bg;
+}
+
+@mixin responsive-table($headers...) {
+  $length: length($headers);
+  @for $i from 1 through $length {
+    td:nth-of-type(#{$i}):before { content: "#{nth($headers, $i)}"; }
+  }
+}
+
+.expressions-table {
+  @include responsive-table("Feature", "Example", "Explanation");
+}
+
+.attributes-table {
+  @include responsive-table("Attribute", "Required?", "Description");
+}
+
+.lifecycle-table {
+  @include responsive-table("Spec", "Polymer", "Called When");
+}
+
+.fouc-table {
+  @include responsive-table("Class Name", "Applied Behavior");
+}

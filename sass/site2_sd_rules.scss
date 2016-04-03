@@ -1,0 +1,37 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "material";
+@import "vars";
+
+
+paper-button {
+  &::shadow #content {
+    padding: 5px 5px 5px;
+    & > span {
+      vertical-align: middle;
+    }
+  }
+}
+
+body /deep/ doc-page::shadow paper-button[raised],
+body /deep/ component-download-button::shadow paper-button[raised] {
+  background-color: $materialPurple;
+  fill: white;
+  color: white;
+}
+
+// Phone
+@media only screen and (max-width: $break-small)  {
+
+  html /deep/ app-bar::shadow .polymer-status-badge {
+     margin: 0;
+  }
+}

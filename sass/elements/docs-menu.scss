@@ -1,0 +1,123 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "elements";
+
+:host {
+  display: block;
+}
+
+#mainmenu {
+  display: block;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+}
+
+#mainmenu > core-submenu::shadow core-item {
+  font-weight: 500;
+  color: #424242;
+}
+
+polyfill-rule {
+  content: "#mainmenu > core-submenu core-item";
+  font-weight: normal;
+}
+
+
+#mainmenu > core-submenu {
+  $leftPadding: 24px;
+  border-top: 1px solid #ccc;
+  padding: 0 $leftPadding;
+}
+
+#mainmenu > core-submenu:last-of-type {
+  border-bottom: 1px solid #ccc;
+}
+
+// Top level nav items get colored on selection.
+#mainmenu > core-submenu.core-selected::shadow core-item {
+  color: currentcolor;
+}
+#mainmenu > core-submenu.core-selected::shadow core-item::shadow core-icon {
+   color: currentcolor;
+}
+
+polyfill-rule {
+  content: "#mainmenu > core-submenu.core-selected core-item";
+  color: initial;
+}
+
+polyfill-rule {
+  content: "#mainmenu > core-submenu.core-selected > #submenuItem:first-of-type";
+  color: currentcolor !important;
+}
+
+core-menu > core-item {
+  padding: 0 24px;
+  font-weight: 500;
+  border-bottom: 1px solid #ccc;
+}
+
+core-menu > core-item:last-of-type {
+  border-bottom: none;
+}
+
+core-menu > core-item > a {
+  color: rgb(66, 66, 66);
+}
+
+core-menu > core-item /deep/ #icon {
+  color: #757575;
+  margin: 0 16px 0 0;
+}
+
+core-submenu /deep/ core-item,
+core-item {
+  font-size: 13px !important;
+  line-height: 32px !important;
+  padding: 0;
+  color: #212121;
+  height: 48px;
+}
+
+core-submenu /deep/ core-item.core-selected,
+core-item.core-selected {
+  font-weight: 500 !important;
+}
+
+
+core-submenu::shadow core-item::shadow core-icon {
+  margin: 0 16px 0 0 !important;
+  color: #757575;
+}
+
+core-submenu core-submenu::shadow core-item::shadow core-icon {
+  -webkit-order: 2;
+  order: 2;
+  color: #aaa;
+  margin: 0 !important;
+}
+
+core-submenu core-submenu::shadow core-item::shadow #label {
+  -ms-flex: 1 1 0.000000001px;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-flex-basis: 0.000000001px;
+  flex-basis: 0.000000001px;
+}
+
+core-submenu core-submenu::shadow core-menu {
+  margin-left: 24px !important;
+}
+
+core-submenu /deep/ core-menu {
+  margin: 0 !important;
+}

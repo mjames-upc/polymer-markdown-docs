@@ -1,0 +1,86 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "base";
+
+//@import "spec";
+//@import "polymer";
+
+/* Elements */
+.element-list {
+  > [data-element-file] {
+    padding-bottom: $additonalPadding;
+    border-top: 1px solid $main-bg;
+    height: 95px;
+    overflow: hidden;
+    cursor: pointer;
+    // transition: height 300ms ease-in-out;
+
+    &.expand {
+      height: auto;
+    }
+  }
+
+  header {
+    margin: $additonalPadding 0;
+
+    h2 {
+      margin: 0 !important;
+      /* Note: permalink :target anchors don't work when these are flexbox. */
+      @include display-flex;
+      @include align-items(center);
+      @include justify-content(flex-end);
+
+      span {
+        @include flex(1);
+      }
+    }
+
+    a {
+      margin-left: 20px;
+      &:not(.permalink) {
+        font-size: initial;
+      }
+      &[disabled] {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .name {
+    display: inline-block;
+    code {
+      white-space: nowrap;
+    }
+  }
+
+  .nodocs {
+    margin-left: 17px;
+    font-style: italic;
+
+    &:after {
+      content: 'No documentation available.';
+    }
+  }
+
+  iframe {
+    border: none;
+    width: 100%;
+  }
+
+  .bower_install_instructions,
+  .api_documentation {
+    display: block;
+    > label {
+      font-weight: 500;
+    }
+  }
+
+}

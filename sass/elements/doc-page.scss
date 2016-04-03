@@ -1,0 +1,134 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "elements";
+@import "material";
+
+:host {
+  display: block;
+}
+h1 {
+  color: #E91E63;
+  /*font-size: 52px;*/
+  line-height: 60px;
+  font-weight: inherit;
+}
+
+.box {
+  margin-bottom: 40px;
+
+  &:not(.top) {
+    .details {
+      padding: 16px;
+
+      .params {
+        margin-top: 40px;
+      }
+    }
+
+    .box-header {
+      padding: 16px;
+    }
+
+    h3 {
+      margin-top: 0; 
+      color: white;
+    }
+
+    pre {
+      padding: initial;
+      background-color: transparent;
+      margin: initial;
+      font-size: 12px;
+    }
+  }
+
+  code {
+    color: currentcolor;
+    font-weight: 500;
+  }
+}
+
+pre {
+  max-width: 832px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  border: none;
+}
+
+.attribute-box {
+  .box-header {
+    @extend .material-orange;
+  }
+  .details {
+    @extend .material-orange-light;
+    border-bottom: 1px solid rgba(255, 86, 33, 0.5);
+  }
+  .details-collapsed {
+    @extend .material-orange-lightest;
+  }
+}
+
+.property-box {
+  .box-header {
+    @extend .material-yellow;
+  }
+  .details {
+    @extend .material-yellow-light;
+    border-bottom: 1px solid rgba(243, 179, 0, 0.5);
+  }
+  .details-collapsed {
+    @extend .material-yellow-lightest;
+  }
+}
+
+.method-box {
+  .box-header {
+    @extend .material-green;
+  }
+  .details {
+    @extend .material-green-light;
+    border-bottom: 1px solid rgba(0, 190, 164, 0.5);
+  }
+  .details-collapsed {
+    @extend .material-green-lightest;
+  }
+}
+
+.event-box {
+  .box-header {
+    @extend .material-blue;
+  }
+  .details {
+    @extend .material-blue-light;
+    border-bottom: 1px solid rgba(65, 132, 243, 0.5);
+  }
+  .details-collapsed {
+    @extend .material-blue-lightest;
+  }
+}
+
+.badge {
+  color: currentcolor;
+}
+
+.inherit-toggle {
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding-right: 0;
+}
+
+.inherit-toggle:hover,
+.inherit-toggle:focus {
+  text-decoration: underline;
+}

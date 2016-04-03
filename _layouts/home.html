@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Organization">
+<head>
+{% include head.html %}
+</head>
+<body id="{{page.title | downcase | replace:' ','-' }}">
+
+<scroll-area>
+  <site-banner class="main-bg bar sticky" layout horizontal center start unresolved>
+    <a href="{{ site.baseurl }}" class="logo" layout horizontal><img src="{{ site.baseurl }}/images/logos/awips2.png" alt="AWIPS II User Guide"></a>
+    {% include top-nav.html %}
+  </site-banner>
+
+  <main>{{content}}</main>
+
+  {% include footer.html %}
+
+</scroll-area>
+
+</body>
+</html>

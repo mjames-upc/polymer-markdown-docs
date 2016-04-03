@@ -1,0 +1,70 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+$font-size-display: 40px;
+
+h1, h2, h3, h4, h5 {
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 48px;
+  margin: 0;
+}
+
+// The @polyfill rules are kept separate from the general ones to the polyfill
+// doesn't process them. Helps mitigate FOUC.
+
+h1 {
+  font-size: $font-size-display;
+}
+
+polyfill-next-selector { content: ':host h1'; }
+::content h1 {
+  font-size: $font-size-display;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+polyfill-next-selector { content: ':host h2'; }
+::content h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+polyfill-next-selector { content: ':host h3'; }
+::content h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+polyfill-next-selector { content: ':host h4'; }
+::content h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+polyfill-next-selector { content: ':host h5'; }
+::content h5 {
+  font-size: 12px;
+  font-weight: 500;
+}

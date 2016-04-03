@@ -1,0 +1,115 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "elements";
+
+:host {
+  background-color: $main-purple;
+  @include display-flex();
+  @include align-items(flex-end);
+  position: relative;
+  z-index: 1;
+  height: $siteBannerHeightMax;
+  color: white;
+  // overflow: hidden;
+  padding-left: $additonalPadding + 40;
+
+  -webkit-transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease-in;
+
+  // @include transform(translate3d(0,0,0));
+}
+
+:host([type="guide"]) {
+  background-color: $guides-resources-color !important;
+}
+
+:host([type="elements"]),:host([type="about"]),:host([type="article"]) {
+  background-color: $elements-color !important;
+}
+
+:host([type="start"]) {
+  background-color: $getting-started-color !important;
+}
+
+polyfill-next-selector { content: ':host header'; }
+:host ::content header {
+  padding: 30px 0 40px 0;
+  width: 100%;
+}
+
+polyfill-next-selector { content: ':host header h1'; }
+:host ::content header h1 {
+  font-size: 45px !important;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+// polyfill-next-selector { content: 'scroll-area:not(.scrolling) h1'; }
+// :ancestor(scroll-area:not(.scrolling)) ::content header h1 {
+//   -webkit-transition: -webkit-transform 200ms linear;
+//   transition: -webkit-transform 200ms linear;
+// }
+
+polyfill-next-selector { content: ':host header.shrink h1'; }
+:host ::content header.shrink h1 {
+  -webkit-transform: scale(0.444444444);
+  transform: scale(0.444444444);
+}
+
+polyfill-next-selector { content: ':host header.shrink summary'; }
+:host ::content header.shrink summary {
+  visibility: hidden;
+}
+
+polyfill-next-selector { content: ':host header.shrink'; }
+:host ::content header.shrink {
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+}
+
+// polyfill-next-selector { content: 'header a'; }
+// :host ::content a {
+//   color: currentcolor;
+// }
+
+polyfill-next-selector { content: 'header summary'; }
+:host ::content header summary {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+// Phone
+@media only screen and (max-width: $break-small) {
+  :host {
+    position: fixed;
+    height: $siteBannerHeightMinMobile !important;
+    width: 100%;
+    @include align-items(center !important);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+  }
+
+  polyfill-next-selector { content: ':host header'; }
+  :host ::content header {
+    display: none;
+  }
+
+  polyfill-rule {
+    content: 'header#internalheader';
+    display: block;
+    padding: 0;
+  }
+
+  polyfill-rule {
+    content: 'header#internalheader h2';
+    margin: 0;
+  }
+}

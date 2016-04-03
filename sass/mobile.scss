@@ -1,0 +1,159 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "base";
+
+// Phone
+@media only screen and (max-width: $break-small)  {
+
+  .onlyonmobile {
+    display: block !important;
+  }
+
+  .bar {
+    height: $siteBannerHeightMinMobile;
+  }
+  
+  #welcome {
+    a.logo {
+      max-width: 40%;
+    }
+  }
+
+  .panel {
+    margin: 0 30px !important;
+    padding: $content-padding 0 40px 0 !important;
+
+    > img {
+      margin-bottom: 50px;
+      width: 200px;
+      margin-right: auto !important;
+      margin-left: 0px !important;
+    }
+    
+    summary {
+      + summary {
+        margin-right: auto !important;
+        margin-left: 0px !important;
+      }
+      p {
+        margin: 10px 0 !important;
+      }
+    }
+  }
+
+  .paper-button {
+    margin: 15px 0;
+  }
+
+  #architecture .box {
+    margin-bottom: 25px;
+  }
+
+  .edit-on-github {
+    display: none;
+  }
+
+  footer {
+    padding: $mobileContentPadding;
+    .links {
+      @include flex-direction(column);
+      @include align-items(flex-start !important);
+    }
+  }
+
+}
+
+// Phone + Portrait Tablet
+@media only screen and (max-width: $break-medium) {
+
+  #architecture .panel {
+    p {
+      margin-bottom: 10px;
+    }
+    .paper-button {
+      margin: 0 0 40px;
+    }
+  }
+
+  // Responsive Tables
+  // Temporary fix until <responsive-table> fixes EVERYTHING!!!
+  @import "tables";
+}
+
+
+// Portrait Tablet
+@media only screen and (min-width: $break-small + 1) and (max-width: $break-medium) {
+
+  // #welcome #sidebar {
+  //   display: block;
+  // }
+
+  .main-bg .panel img {
+    width: 300px;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  
+  .panel {
+    @include flex-direction(column);
+    margin: 0 30px !important;
+
+    &.left img {
+      margin-left: 0px !important;
+      margin-right: auto !important;
+    }
+
+    &.right img {
+      width: 300px;
+      margin-right: 0px !important;
+      margin-left: auto !important;
+    }
+
+    summary + summary {
+      margin-right: auto !important;
+      margin-left: 0px !important;
+    }
+  }
+
+  footer {
+    padding-left: $mobileContentPadding;
+  }
+
+}
+
+// Landscape Tablet + Small Desktop
+@media only screen and (min-width: $break-medium + 1) and (max-width: $break-large) {
+
+  footer {
+    .links {
+      @include flex-wrap(wrap);
+      @include justify-content(flex-start);
+
+      .paper-button {
+        margin-bottom: 16px;
+      }
+    }
+
+    #copyright {
+      margin-top: -16px;
+    }
+  }
+}
+
+// Desktop or larger
+@media only screen and (min-width: $break-large) {
+  #future {
+    img {
+      width: 416px;
+      height: 286px;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "elements";
+
+:host {
+  display: block;
+}
+
+:host([sidebar]) {
+  padding-left: $sidebarWidth;
+}
+
+polyfill-next-selector { content: ':host[sidebar]:not(.mobile) site-banner app-bar.fixed'; }
+:host([sidebar]:not(.mobile)) ::content site-banner app-bar.fixed {
+  margin-left: $sidebarWidth;
+}
+
+polyfill-next-selector { content: ':host.scrolling:not(.mobile) site-banner'; }
+:host(.scrolling:not(.mobile)) ::content site-banner {
+  height: $siteBannerHeightMin !important;
+  padding-bottom: 0;
+  position: fixed !important;
+  width: 100%;
+
+  // border-bottom: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+polyfill-next-selector { content: ':host.scrolling:not(.mobile) > article'; }
+:host(.scrolling:not(.mobile)) ::content article {
+  padding-top: $siteBannerHeightMax + $additonalPadding;
+}
+
+polyfill-next-selector { content: ':host site-banner app-bar.fixed'; }
+:host ::content site-banner app-bar.fixed {
+  position: fixed;
+}
+
+polyfill-next-selector { content: ':host > article'; }
+:host ::content article {
+  padding: $additonalPadding $additonalPadding + 40;
+  max-width: 912px;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+// Phone + Tablet
+@media only screen and (max-width: $break-medium) {
+  :host([sidebar]) {
+    padding-left: 0 !important;
+  }
+
+  polyfill-next-selector { content: ':host > article'; }
+  :host ::content article {
+    padding-left: $mobileContentPadding;
+    padding-right: $mobileContentPadding;
+  }
+}
+
+// Phone
+@media only screen and (max-width: $break-small)  {
+  polyfill-next-selector { content: ':host > article '; }
+  ::content article {
+    padding-top: $siteBannerHeightMinMobile + 10;
+  }
+}

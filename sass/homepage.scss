@@ -1,0 +1,343 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "base";
+
+@import "spec";
+@import "polymer";
+
+@import "site2"; // site wide styles
+
+.h1heading {
+  font-size: 35px;
+}
+
+.h5heading {
+  font-size: $font-size-secondary;
+  font-weight: 500;
+  color: $secondary-heading-color;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  margin-top: 6px;
+  margin-bottom: 18px;
+}
+
+section {
+  border-bottom: 1px solid $main-bg;
+}
+
+.main-purple {
+  color: white;
+}
+
+.main-light-purple {
+  background-color: $elements-color;
+}
+
+section .bar {
+  @include justify-content(flex-end);
+  @include align-items(center);
+  border-top: 1px solid $main-bg;
+  border-bottom: 1px solid $main-bg;
+  background-color: $gray-medium;
+  height: auto;
+
+  &.main-purple {
+    border-color: rgba(255,255,255,0.3);
+    @extend .main-purple;
+
+    a {
+      color: white;
+    }
+  }
+
+  a {
+    color: inherit;
+    font-size: $font-size-body;
+    // font-weight: 600;
+    // letter-spacing: 0.01em;
+    // line-height: 19.2px;
+    text-align: right;
+    @include flex(1);
+    // opacity: 0.6;
+
+    &:after {
+      content: '\0025BE';
+      margin: 0 10px;
+    }
+  }
+}
+
+// Manual FOUC prevention for homepage.
+site-banner {
+  height: $siteBannerHeightMin;
+  -webkit-transition: box-shadow 200ms ease-in-out, opacity 300ms ease-in !important;
+  transition: box-shadow 200ms ease-in-out, opacity 300ms ease-in !important;
+
+  &[unresolved] {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// ----
+
+site-banner .logo {
+  z-index: 200;
+}
+
+.panel {
+  @extend .content-padding;
+  padding: 75px 16px;
+
+  $img-margin: 88px;
+
+  &.left {
+    img {
+      margin-right: $img-margin;
+    }
+  }
+  &.right {
+    img {
+      margin-left: $img-margin;
+    }
+  }
+
+  summary {
+
+    + summary {
+      margin-left: 25px;
+    }
+
+    p {
+      margin: 20px 0;
+      line-height: 32px;
+    }
+  }
+
+  img {
+    @include align-self(center);
+  }
+
+  img.cover {
+    object-fit: cover;
+    object-position: 50% 0;
+    @include flex(1 0 auto);
+    margin-top: 1em;
+    height: 300px;
+    width: 100%;
+    -webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, white 20%);
+    -moz-mask-box-image: -moz-linear-gradient(bottom, transparent, white 20%);
+    -ms-mask-box-image: -ms-linear-gradient(bottom, transparent, white 20%);
+    mask-box-image: linear-gradient(bottom, transparent, white 20%);
+  }
+}
+
+@supports (not (object-fit: cover)) {
+  img.cover {
+    height: auto !important;
+    width: 100% !important;
+  }
+}
+
+#future {
+  .panel {
+    @include display-flex;
+    padding-top: 125px;
+    min-height: 505px;
+  }
+  summary {
+    @include flex(1 1 0.000001px);
+  }
+  a {
+    text-decoration: none;
+  }
+  a:not(:last-of-type) {
+    margin-right: 12px;
+  }
+}
+@media only screen and (max-width: $break-medium) {
+  #future {
+    padding-top: 30px;
+    .panel {
+      @include flex-direction(column);
+    }
+    summary {
+      @include flex(1 1 auto);
+    }
+  }
+}
+
+#release08 {
+  color: white;
+  border-bottom: none;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .panel {
+    padding: 25px 16px;
+  }
+
+  core-icon {
+    margin-right: 10px;
+  }
+}
+
+#googleio {
+  background-color: rgb(0, 188, 214);
+  color: white;
+  border-bottom: none;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .panel {
+    padding: 25px 16px;
+  }
+
+  .iologo {
+    -webkit-flex-shrink: 0;
+    -ms-flex-shrink: 0;
+    flex-shrink: 0;
+  }
+
+  h4 {
+    font-weight: normal;
+  }
+  h2 {
+    line-height: 1.4;
+  }
+
+  img {
+    height: 100px;
+  }
+}
+
+#featured {
+  .video {
+    iframe {
+      width: 525px;
+      height: 273px;
+    }
+  }
+  .panel summary {
+    margin-left: 40px;
+  }
+  .panel img {
+    width: 525px;
+    height: 273px;
+    border: 1px solid $main-bg;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  @media only screen and (max-width: $break-medium) {
+    .panel summary {
+      margin-left: 0 !important;
+      margin-top: 15px !important;
+    }
+  }
+}
+
+#catalog {
+  .screenshot {
+    display: block;
+    text-align: center;
+  }
+  .panel img {
+    margin-top: 32px;
+  }
+}
+
+#designer {
+  summary {
+    h3 {
+      margin: 1em 0;
+    }
+  }
+}
+
+#learn {
+  min-height: 536px;
+}
+
+#learn, #everything-element {
+  summary {
+    color: #fff;
+  }
+}
+
+#everything-element {
+  code {
+    color: currentcolor;
+  }
+  .panel img {
+    max-width: 312px;
+  }
+}
+
+#apps {
+  .panel {
+    padding: $content-padding 16px ($content-padding - 32px) 16px;
+    .columns {
+      margin-top: 32px;
+    }
+    summary {
+      margin-bottom: 32px;
+    }
+  }
+  .box {
+    $box-size: 200px;
+
+    @extend .main-bg;
+    margin-bottom: $content-padding / 2;
+    border-radius: 2px;
+    width: $box-size;
+    height: $box-size;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  }
+  h1 {
+    @extend .h1heading;
+  }
+  h5 {
+    @extend .h5heading;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  p {
+    margin: 10px 0;
+    line-height: 24px;
+  }
+}
+
+.button-row {
+  margin-top: 30px;
+}
+
+.button-row paper-button {
+  margin-right: 16px;
+}
+
+@media only screen and (max-width: $break-medium) {
+  #apps .columns {
+    display: block;
+    summary {
+      @include flex(initial);
+    }
+  }
+}

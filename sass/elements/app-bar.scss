@@ -1,0 +1,157 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+@import "compass/css3/images";
+
+@import "elements";
+
+:host {
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(flex-end);
+  @include flex(1 0 auto);
+  z-index: 100;
+  @include box-sizing(border-box);
+  // // Insures search box covers entire bar.
+  // background: inherit;
+  font-size: 14px;
+  color: #000;
+}
+
+:host([theme="light"]) {
+  color: inherit;
+}
+
+:host(:not([theme="light"]).search-on) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14902);
+  box-shadow: rgb(204, 204, 204) 0px 1px 5px;
+}
+
+:host(.search-on) {
+  left: 0;
+  background: inherit;
+  z-index: 1001;
+}
+
+:host(.fixed) {
+  position: fixed;
+}
+
+:host-context(site-banner) {
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+polyfill-next-selector { content: ':host a'; }
+:host ::content a {
+  // opacity: 0.6;
+  @include flex(1 0 auto);
+  text-transform: none !important;
+}
+
+#search {
+  @include display-flex();
+  @include align-items(center);
+  @include flex(0 0 auto);
+  width: 40px;
+  @include box-sizing(border-box);
+  background-color: inherit;
+
+  // transition: -webkit-transform 400ms;
+
+  &[show] {
+    // -webkit-transform: translateX(-365px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 16px;
+    margin-left: 0;
+
+    input {
+      padding: 10px;
+      visibility: visible;
+    }
+  }
+}
+
+input {
+  background-color: inherit;
+  border: none;
+  font-size: 20px;
+  outline: none;
+  padding: 0;
+  // transition: width 400ms;
+  color: inherit;
+  @include flex(1 0 0);
+  visibility: hidden;
+  -webkit-appearance: none;
+}
+
+#hamburger {
+  display: none;
+}
+
+.site-switcher {
+  color: #757575;
+  margin: 5px;
+  padding: 7px 16px 7px 20px;
+  background: #FAFAFA;
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.site-switcher a {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  padding: 0.9em 1em;
+}
+
+.site-switcher /deep/ core-menu {
+  margin: 0;
+}
+
+.site-switcher /deep/ paper-item {
+  width: 100%;
+}
+
+.site-switcher /deep/ .button-content {
+  padding: 0;
+}
+
+// Tablet
+@media only screen and (max-width: $break-medium) {
+  :host {
+    @include justify-content(space-between);
+    width: 100%;
+    background: initial;
+  }
+
+  :host-context(#welcome) {
+    @include justify-content(flex-end);
+  }
+
+  polyfill-next-selector { content: ':host a.paper-button'; }
+  ::content a.paper-button {
+    display: none !important;
+  }
+
+  #hamburger {
+    display: inline-block;
+  }
+
+  :host-context(#welcome) #hamburger {
+    display: none;
+  }
+}
