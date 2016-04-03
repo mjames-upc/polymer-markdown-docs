@@ -13,7 +13,8 @@ add_permalinks: true # adds permalinks to heading tags.
 #permalink: /news/:year/:month/:day/:title.html
 
 exclude: ["node_modules", "sass", "README.md",
-          "Gruntfile.js", "package.json", "config.rb",
+          "Gruntfile.js", "package.json", "config.rb", "bower.json",
+          "Gemfile", "Gemfile.lock", "deploy.sh",
 	  "vulcanize_config.json"]
 
 kramdown:
