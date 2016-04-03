@@ -90,23 +90,6 @@ and point a browser to
 
 Once your changes look good, `git commit` them and push.
 
-## Pushing the docs to Github Pages
-
-**Note**: only project owners can publish the documentation.
-
-### Preview locally
-
-It's a good idea to run `jekyll serve` before pushing the docs, as it runs a number of grunt tasks. Verify things went well and preview your changes locally using the dev server.
-
-### Update apps
-
-When updating the version of Polymer that the site uses, make sure to also update it in the following apps:
-
-- [Tutorial](https://github.com/Polymer/polymer-tutorial)
-- [Topeka](https://github.com/Polymer/topeka)
-- [Designer](https://github.com/Polymer/designer)
-
-Unzip the release candidate into the `bower_components` directory of each app, verify, then run the app's `deploy.sh` script. In the case of the Tutorial, you'll need to follow the deploy instructions on the repo itself.
 
 ### Release
 
@@ -121,17 +104,22 @@ Once these are updated, you need to update some versions for the docs:
 Build the docs:
 
     grunt docs
+
+or
+
+    ./deploy.sh
+
+The script deploy.sh will remove and recreate the _site directory, and trim some fat as well (removing Polymer element demo and test directories).
     
-At this point, run the dev server with `grunt`, and preview things locally to make sure nothing is terribly
-broken after Polymer and the elements have been updated. 
+Now run the dev serve with 
 
-Next, run the deploy script in the root of the `Polymer/docs` directory:
+    grunt
 
-    ./scripts/deploy_site.sh
-    
-This script builds the site, api docs, runs Vulcanizer over the imports, and deploys to App Engine.    
+## Pushing the docs to Github Pages
 
-Last thing is to switch the app version in the App Engine admin console. To make the docs live, hit up https://appengine.google.com/deployment?&app_id=s~polymer-project and select the version you just deployed.
+**Note**: only project owners can publish the documentation.
 
-[jekyll]: http://jekyllrb.com/
-[grunt]: http://gruntjs.com/
+   grunt gh-pages
+
+
+
