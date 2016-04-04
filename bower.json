@@ -1,11 +1,4 @@
 {
-  "name": "AWIPS II User Guide",
-  "version": "0.0.0",
-  "homepage": "https://github.com/Polymer/docs",
-  "authors": [
-    "Michael James <mjames@ucar.edu>"
-  ],
-  "description": "Data Services and Tools for Geoscience",
   "keywords": [
     "awips","awips2","awips-ii",
     "edex","cave","documentation"
