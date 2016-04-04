@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
 <meta name="google-site-verification" content="k0e8DrbD40s54xHNBqwIsRrSSAkZoprwtEYDnNY06bU" />
 <meta name="google-site-verification" content="pnjjbQFvjPwaWhEXY6nSyaS9iyghmH-M_yLHBveDX2M">
-<meta itemprop="name" content="AWIPS II - Run EDEX">
+<meta itemprop="name" content="AWIPS II - The EDEX Service Manager">
 <meta itemprop="description" content="Polymer is a library that uses the latest web technologies to let you create custom HTML elements. Build anything from a button to a complete application as an encapsulated, reusable element that works across desktop and mobile.">
 
 
@@ -15,7 +15,7 @@
 
 <title>
   
-    Run EDEX -
+    The EDEX Service Manager -
    AWIPS II
 </title>
 <link rel="publisher" href="https://plus.google.com/107187849809354688692">
@@ -34,7 +34,7 @@
 
 
 </head>
-<body id="run-edex">
+<body id="the-edex-service-manager">
 
 <main id="content-container" class="polymer-content">
   <app-drawer id="sidebar" unresolved>
@@ -51,16 +51,14 @@
   </app-drawer>
 
   <scroll-area sidebar unresolved class="scrolling">
-    <site-banner type="guide" shortname="Docs" unresolved>
+    <site-banner type="" shortname="" unresolved>
       
 <app-bar theme="light" class="bar fixed">
 </app-bar>
 
       <header class="shrink">
         <h1>
-        
-          Install & Config
-        : Run EDEX
+         The EDEX Service Manager
         </h1>
       </header>
     </site-banner>
@@ -72,48 +70,21 @@
 
       <header class="onlyonmobile">
         <h1>
-          
-          Install & Config
-          : Run EDEX
+          : The EDEX Service Manager
         </h1>
       </header>
 
-      
-<!--TOC_START-->
-<ul id="markdown-toc">
-  <li><a href="#edex-status" id="markdown-toc-edex-status"><code>edex status</code></a></li>
-  <li><a href="#edex-start" id="markdown-toc-edex-start"><code>edex start</code></a></li>
-  <li><a href="#edex-stop" id="markdown-toc-edex-stop"><code>edex stop</code></a></li>
-  <li><a href="#other-options" id="markdown-toc-other-options">Other Options</a>    <ul>
-      <li><a href="#edex-setup" id="markdown-toc-edex-setup"><code>edex setup</code></a></li>
-      <li><a href="#edex-log" id="markdown-toc-edex-log"><code>edex log</code></a></li>
-      <li><a href="#edex-users" id="markdown-toc-edex-users"><code>edex users</code></a></li>
-      <li><a href="#edex-purge" id="markdown-toc-edex-purge"><code>edex purge</code></a></li>
-    </ul>
-  </li>
-</ul>
-<!--TOC_END-->
+      <h1 id="the-edex-service-manager">The EDEX Service Manager</h1>
 
-<p>By default, EDEX services (including postgres, httpd-pypies, and qpidd) will run at boot, as defined in the header of each service file (e.g. <code>/etc/init.d/edex_camel</code>)</p>
+<p>The four EDEX services (<strong>postgres</strong>, <strong>httpd-pypies</strong>, <strong>qpidd</strong>, and <strong>edex_camel</strong>) will run at boot once they are installed, as defined in the header of each file by the same name in <code>/etc/init.d</code>.  The LDM does not start automatically on boot.</p>
 
-<pre><code>#!/bin/bash
-# edex_camel  This shell script takes care of starting...
-# chkconfig: 35 99 10
-</code></pre>
+<h1 id="edex-status">edex status</h1>
 
-<p>The <code>chkconfig: 35 99 10</code> defintion defines runlevels 3 and 5, started at priority 99 (last), stopped at priority 10 (one of the first).  Each EDEX file in <code>/etc/init.d</code> has runlevel and priority definitions.  Furthermore, when the <code>edex setup</code> command is run during install, <code>chkconfig</code> is run for each core EDEX service (not including the LDM):</p>
+<p>Type <code>edex status</code> (or simply <code>edex</code>) to list the EDEX processes and their statuses.</p>
 
-<pre><code>chkconfig edex_postgres on --level 35
-chkconfig httpd-pypies on --level 35
-chkconfig qpidd on --level 35
-chkconfig edex_camel on --level 35
-</code></pre>
+<pre><code>edex
 
-<p>The EDEX administrator should be aware that these services are running on boot by default, but the LDM is not (for now).</p>
-
-<h2 id="edex-status"><code>edex status</code></h2>
-
-<pre><code>[edex status]
+[edex status]
  postgres    :: not running
  pypies      :: not running
  qpid        :: not running
@@ -122,13 +93,16 @@ chkconfig edex_camel on --level 35
  EDEXrequest :: not running
  ldmadmin    :: not running
 
-
  edex (status|start|stop|setup|log|purge|users)
 </code></pre>
 
-<h2 id="edex-start"><code>edex start</code></h2>
+<p>The last line are the other available commands (<a href="#edex-start">edex start</a>, <a href="#edex-stop">edex stop</a>, <a href="#edex-setup">edex setup</a>, <a href="#edex-log">edex log</a>, <a href="#edex-purge">edex purge</a>, <a href="#edex-users">edex users</a>).</p>
 
-<pre><code>Starting EDEX PostgreSQL: 
+<h1 id="edex-start">edex start</h1>
+
+<pre><code>edex start
+
+Starting EDEX PostgreSQL: 
 Starting logging service:                                  [  OK  ]
 Starting httpd: nohup: redirecting stderr to stdout       [  OK  ]
 Starting QPID
@@ -152,9 +126,11 @@ Checking LDM configuration-file (/awips2/ldm/etc/ldmd.conf)...
 Starting the LDM server...
 </code></pre>
 
-<h2 id="edex-stop"><code>edex stop</code></h2>
+<h1 id="edex-stop">edex stop</h1>
 
-<pre><code>Stopping EDEX Camel (request): 
+<pre><code>edex stop
+
+Stopping EDEX Camel (request): 
 Stopping EDEX Camel (ingest): 
 Stopping EDEX Camel (ingestGrib): 
 EDEX request shutdown
@@ -170,12 +146,11 @@ Stopping AWIPS II LDM:Stopping the LDM server...
 Waiting for the LDM server to terminate...
 </code></pre>
 
-<h1 id="other-options">Other Options</h1>
-
-<h2 id="edex-setup"><code>edex setup</code></h2>
+<h1 id="edex-setup">edex setup</h1>
 <p>to configure (or confirm) that the EDEX hostname and IP address definitions exist.  If these definitions are missing, <code>edex start</code> will run <code>edex setup</code> for you.</p>
 
 <pre><code>edex setup
+
 [edex] EDEX IP and Hostname Setup
  Checking /awips2/data/pg_hba.conf [OK]
  Checking /awips2/edex/bin/setup.env [OK]
@@ -184,10 +159,11 @@ Waiting for the LDM server to terminate...
 [done]
 </code></pre>
 
-<h2 id="edex-log"><code>edex log</code></h2>
+<h1 id="edex-log">edex log</h1>
 <p>to view the Ingest JVM log (default) and others such as <code>edex log grib</code>, <code>edex log request</code>, <code>edex log ldm</code>.</p>
 
 <pre><code>edex log
+
 [edex] EDEX Log Viewer
 
  :: No log specified - Defaulting to ingest log
@@ -198,10 +174,10 @@ Time spent in persist: 68
 INFO  2015-12-09 18:34:45,951 [Ingest.obs-1] Ingest: EDEX: Ingest - obs:: /awips2/data_store/metar/20151209/18/SAIN31_VABB_091830_131392869.2015120918 processed in: 0.0810 (sec) Latency: 0.1800 (sec)
 </code></pre>
 
-<h2 id="edex-users"><code>edex users</code></h2>
+<h1 id="edex-users">edex users</h1>
 <p>to view user information for your EDEX server (account username and domain name are recorded by each edex server for localization purposes).</p>
 
-<h2 id="edex-purge"><code>edex purge</code></h2>
+<h1 id="edex-purge">edex purge</h1>
 <p>to view any stuck purge jobs in PortgreSQL (a rare but serious problem if your disk fills up).  The solution to this is to run <code>edex purge reset</code>.</p>
 
     </article>

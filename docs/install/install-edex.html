@@ -78,36 +78,26 @@
         </h1>
       </header>
 
-      <h1 id="quick-install">Quick install</h1>
+      <h1 id="download">Download</h1>
+
+<p>For 64-bit RHEL/CentOS 5 and 6, download and run the script <a href="http://www.unidata.ucar.edu/software/awips2/installEDEX.sh">installEDEX.sh</a>:</p>
 
 <pre><code>wget http://www.unidata.ucar.edu/software/awips2/installEDEX.sh
 chmod 755 ./installEDEX.sh
 ./installEDEX.sh
 </code></pre>
 
-<h1 id="system-requirements">System Requirements</h1>
+<p>This will install to <code>/awips2/edex</code>, <code>/awips2/data</code> and other directories.</p>
+
+<blockquote>
+  <p>CentOS/RHEL 5 and 6 are the only supported operating systems for EDEX (Though you may have luck with Fedora Core 12 to 14 and Scientific Linux). Not supported for EDEX: Debian, Ubuntu, SUSE, Solaris, OS X, Fedora 15+, CentOS/RHEL 7, Windows</p>
+</blockquote>
+
+<p>selinux should be <strong>disabled</strong> <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Disabling_SELinux.html">(read more about selinux at redhat.com)</a></p>
+
+<h1 id="edex-config">EDEX Config</h1>
 
 <ol>
-  <li>
-    <p>EDEX operations systems supported:</p>
-
-    <ul>
-      <li>CentOS 5 and 6</li>
-      <li>Red Hat 5 and 6</li>
-      <li>Fedora Core 12 to 14</li>
-    </ul>
-
-    <p>Not supported for EDEX:</p>
-
-    <ul>
-      <li>Debian, Ubuntu, SUSE, Solaris, OS X, Fedora 15+, CentOS/RHEL 7, Windows</li>
-    </ul>
-
-    <p>It will probably work on Scientific Linux.</p>
-  </li>
-  <li>
-    <p>selinux should be <strong>disabled</strong> <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Disabling_SELinux.html">(read more about selinux at redhat.com)</a></p>
-  </li>
   <li>
     <p>create user <code>awips</code> and group <code>fxalpha</code> and create AWIPS II directories</p>
 
@@ -122,6 +112,11 @@ chmod 755 ./installEDEX.sh
 
     <pre><code> awips soft nproc 65536
  awips soft nofile 65536
+</code></pre>
+
+    <p>or with the command</p>
+
+    <pre><code> printf "awips soft nproc 65536\nawips soft nofile 65536\n" &gt;&gt; /etc/security/limits.conf
 </code></pre>
   </li>
   <li>

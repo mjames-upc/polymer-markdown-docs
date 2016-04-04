@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
 <meta name="google-site-verification" content="k0e8DrbD40s54xHNBqwIsRrSSAkZoprwtEYDnNY06bU" />
 <meta name="google-site-verification" content="pnjjbQFvjPwaWhEXY6nSyaS9iyghmH-M_yLHBveDX2M">
-<meta itemprop="name" content="AWIPS II - Start services manually">
+<meta itemprop="name" content="AWIPS II - Start EDEX Manually">
 <meta itemprop="description" content="Polymer is a library that uses the latest web technologies to let you create custom HTML elements. Build anything from a button to a complete application as an encapsulated, reusable element that works across desktop and mobile.">
 
 
@@ -15,7 +15,7 @@
 
 <title>
   
-    Start services manually -
+    Start EDEX Manually -
    AWIPS II
 </title>
 <link rel="publisher" href="https://plus.google.com/107187849809354688692">
@@ -34,7 +34,7 @@
 
 
 </head>
-<body id="start-services-manually">
+<body id="start-edex-manually">
 
 <main id="content-container" class="polymer-content">
   <app-drawer id="sidebar" unresolved>
@@ -51,16 +51,14 @@
   </app-drawer>
 
   <scroll-area sidebar unresolved class="scrolling">
-    <site-banner type="guide" shortname="Docs" unresolved>
+    <site-banner type="" shortname="" unresolved>
       
 <app-bar theme="light" class="bar fixed">
 </app-bar>
 
       <header class="shrink">
         <h1>
-        
-          Install & Config
-        : Start services manually
+         Start EDEX Manually
         </h1>
       </header>
     </site-banner>
@@ -72,9 +70,7 @@
 
       <header class="onlyonmobile">
         <h1>
-          
-          Install & Config
-          : Start services manually
+          : Start EDEX Manually
         </h1>
       </header>
 
@@ -98,9 +94,9 @@ service edex_postgres stop
 
 <p>The service config files are located in <code>/etc/init.d/</code>:</p>
 
-<p><code>ls -la /etc/init.d/ |grep -e edex -e pypies -e qpid</code></p>
+<pre><code>ls -la /etc/init.d/ |grep -e edex -e pypies -e qpid
 
-<pre><code>-rwxr--r--   1 root  root     6693 Nov  7 17:53 edex_camel
+-rwxr--r--   1 root  root     6693 Nov  7 17:53 edex_camel
 -rwxr-xr-x   1 root  root     1422 Oct 29 15:28 edex_ldm
 -rwxr--r--   1 root  root     2416 Sep  7 15:48 edex_postgres
 -rwxr-xr-x   1 root  root     5510 Aug 26 13:05 httpd-pypies

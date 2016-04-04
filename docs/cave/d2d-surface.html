@@ -89,7 +89,10 @@
   <li><a href="#national-convective-weather-forecast-awc" id="markdown-toc-national-convective-weather-forecast-awc">National Convective Weather Forecast (AWC)</a></li>
   <li><a href="#center-weather-advisories-cwa" id="markdown-toc-center-weather-advisories-cwa">Center Weather Advisories (CWA)</a></li>
   <li><a href="#mos-products" id="markdown-toc-mos-products">MOS Products</a></li>
-  <li><a href="#lightning" id="markdown-toc-lightning">Lightning</a></li>
+  <li><a href="#lightning" id="markdown-toc-lightning">Lightning</a>    <ul>
+      <li><a href="#uspn" id="markdown-toc-uspn">USPN</a></li>
+    </ul>
+  </li>
   <li><a href="#ascat-winds" id="markdown-toc-ascat-winds">ASCAT Winds</a></li>
   <li><a href="#maritime-1" id="markdown-toc-maritime-1">Maritime</a>    <ul>
       <li><a href="#maritime-plots" id="markdown-toc-maritime-plots">Maritime Plots</a></li>
@@ -103,7 +106,11 @@
       <li><a href="#storm-reports" id="markdown-toc-storm-reports">Storm Reports</a></li>
       <li><a href="#sps" id="markdown-toc-sps">SPS</a></li>
       <li><a href="#all-warnings" id="markdown-toc-all-warnings">All Warnings</a></li>
-      <li><a href="#lightning-1" id="markdown-toc-lightning-1">Lightning</a></li>
+    </ul>
+  </li>
+  <li><a href="#lightning-1" id="markdown-toc-lightning-1">Lightning</a>    <ul>
+      <li><a href="#nldn" id="markdown-toc-nldn">NLDN</a></li>
+      <li><a href="#nldn-grid" id="markdown-toc-nldn-grid">NLDN Grid</a></li>
     </ul>
   </li>
   <li><a href="#fog-monitor" id="markdown-toc-fog-monitor">Fog Monitor</a>    <ul>
@@ -122,15 +129,15 @@
 
 <p>Several of the data sets in the Obs menu can be interrogated (sampled) for more detailed information by clicking mouse Button 1 (B1) over a site. These data sets include METAR, Maritime, and Local. The Obs menu is subdivided into sections that contain related products. These sections are described below.</p>
 
-<h2 id="metar">METAR</h2>
+<h1 id="metar">METAR</h1>
 
 <p>This section contains automatically updating METAR observations, ceiling and visibility plots, wind chill and heat indices, precipitation plots at various time intervals, and quality-checked MSAS observations. The 24hr Chg METAR plot provides the difference between the observed temperature, dewpoint, pressure, and wind from those observed 24 hours earlier. The calculation of the wind difference involves vector subtraction of the “u” and “v” components.</p>
 
-<h2 id="synoptic">Synoptic</h2>
+<h1 id="synoptic">Synoptic</h1>
 
 <p>This section contains automatically updating Synoptic observations, and 6 hour and 24 hour precip plots. Note that this section of the menu is not present at most sites.</p>
 
-<h2 id="maritime">Maritime</h2>
+<h1 id="maritime">Maritime</h1>
 
 <p>This section contains buoy and ship report plots, plus SAFESEAS for the Marine WFOs.</p>
 
@@ -147,7 +154,7 @@ selecting <strong>Surface</strong> &gt; <strong>Other Maritime Plots</strong> &g
   </li>
 </ul>
 
-<h2 id="hazards">Hazards</h2>
+<h1 id="hazards">Hazards</h1>
 
 <p>The Hazards section covers local and regional plots, marine warnings, local storm reports, lightning plots, and monitoring of fog and winter weather hazards.</p>
 
@@ -174,13 +181,13 @@ that were entered into the LSR text database and decoded into the correct point 
   </li>
 </ul>
 
-<h2 id="surface-metar-synoptic-other-station-plots">Surface, Metar, Synoptic, Other Station Plots</h2>
+<h1 id="surface-metar-synoptic-other-station-plots">Surface, Metar, Synoptic, Other Station Plots</h1>
 
 <p><img src="../images/Rathudf.png" alt="image" /></p>
 
 <p><img src="../images/s7YS0cg.png" alt="image" /></p>
 
-<h2 id="national-convective-weather-forecast-awc">National Convective Weather Forecast (AWC)</h2>
+<h1 id="national-convective-weather-forecast-awc">National Convective Weather Forecast (AWC)</h1>
 
 <p>The <a href="https://www.aviationweather.gov/products/ncwf/">National Convective Weather Forecast</a> (NCWF) is an automatically generated depiction of current convection and extrapolated significant current convection.  It is a supplement to, but does not substitute for, the report and forecast information contained in <a href="">Convective SIGMETs</a>. The NCWF contains both GRIB and BUFR output. The GRIB output delineates the current convection. The BUFR output includes hazardous convection area polygons, movement arrows, and storm top and speed text information.</p>
 
@@ -188,7 +195,7 @@ that were entered into the LSR text database and decoded into the correct point 
 
 <p><img src="../images/JwRbQMl.png" alt="image" /></p>
 
-<h2 id="center-weather-advisories-cwa">Center Weather Advisories (CWA)</h2>
+<h1 id="center-weather-advisories-cwa">Center Weather Advisories (CWA)</h1>
 
 <p>The <a href="https://aviationweather.gov/cwamis/help">CWA</a> is an aviation weather warning for conditions meeting or approaching national in-flight advisory (AIRMET, SIGMET or SIGMET for convection) criteria. The CWA is primarily used by air crews to anticipate and avoid adverse weather conditions in the en route and terminal environments. It is not a flight planning product because of its short lead time and duration.</p>
 
@@ -196,7 +203,7 @@ that were entered into the LSR text database and decoded into the correct point 
 
 <p><img src="../images/II5BIKb.png" alt="image" /></p>
 
-<h2 id="mos-products">MOS Products</h2>
+<h1 id="mos-products">MOS Products</h1>
 
 <p>These plots are derived from the MOS BUFR Bulletins. The previous MOS plots were derived from the MOS Text Bulletins. The plots display forecast data for GFS MOS, GFS-Extended MOS, and NGM MOS. Submenus under each model reveal the element choices. These displays include:</p>
 
@@ -212,11 +219,11 @@ that were entered into the LSR text database and decoded into the correct point 
 
 <p><img src="../images/cpXcdBh.png" alt="image" /></p>
 
-<h2 id="lightning">Lightning</h2>
+<h1 id="lightning">Lightning</h1>
 
 <p>(only available for US-based .edu domains)</p>
 
-<h4 id="uspn">USPN</h4>
+<h2 id="uspn">USPN</h2>
 
 <ul>
   <li>1 hour plot</li>
@@ -227,15 +234,15 @@ that were entered into the LSR text database and decoded into the correct point 
   <li>1 minute lightning sequence plot</li>
 </ul>
 
-<h2 id="ascat-winds">ASCAT Winds</h2>
+<h1 id="ascat-winds">ASCAT Winds</h1>
 
 <p>The Advanced Scatterometer (ASCAT)  25 km windsoverlaid on top of GOES East water wapor:</p>
 
 <p><img src="../images/X8MpdM4.png" alt="image" /></p>
 
-<h2 id="maritime-1">Maritime</h2>
+<h1 id="maritime-1">Maritime</h1>
 
-<h3 id="maritime-plots">Maritime Plots</h3>
+<h2 id="maritime-plots">Maritime Plots</h2>
 
 <ul>
   <li>Fixed Buoys</li>
@@ -248,7 +255,7 @@ that were entered into the LSR text database and decoded into the correct point 
   <li>MAROB Clouds/Vis</li>
 </ul>
 
-<h3 id="safeseas">SAFESEAS</h3>
+<h2 id="safeseas">SAFESEAS</h2>
 
 <p>need to do with linux client</p>
 
@@ -261,23 +268,23 @@ that were entered into the LSR text database and decoded into the correct point 
   </li>
 </ul>
 
-<h2 id="hazards-1">Hazards</h2>
+<h1 id="hazards-1">Hazards</h1>
 
-<h3 id="warnings">Warnings</h3>
+<h2 id="warnings">Warnings</h2>
 
-<h3 id="flood-warnings">Flood Warnings</h3>
+<h2 id="flood-warnings">Flood Warnings</h2>
 
-<h3 id="marine-warnings">Marine Warnings</h3>
+<h2 id="marine-warnings">Marine Warnings</h2>
 
-<h3 id="storm-reports">Storm Reports</h3>
+<h2 id="storm-reports">Storm Reports</h2>
 
-<h3 id="sps">SPS</h3>
+<h2 id="sps">SPS</h2>
 
-<h3 id="all-warnings">All Warnings</h3>
+<h2 id="all-warnings">All Warnings</h2>
 
-<h3 id="lightning-1">Lightning</h3>
+<h1 id="lightning-1">Lightning</h1>
 
-<h4 id="nldn">NLDN</h4>
+<h2 id="nldn">NLDN</h2>
 
 <ul>
   <li>1 hour plot</li>
@@ -288,7 +295,7 @@ that were entered into the LSR text database and decoded into the correct point 
   <li>1 minute cloud flash sequence plot</li>
 </ul>
 
-<h4 id="nldn-grid">NLDN Grid</h4>
+<h2 id="nldn-grid">NLDN Grid</h2>
 
 <p>Available at 1km, 3km, 5km, 8km, 20km, 40km resolution</p>
 
@@ -307,19 +314,19 @@ that were entered into the LSR text database and decoded into the correct point 
   <li>5 min pulse density</li>
 </ul>
 
-<h2 id="fog-monitor">Fog Monitor</h2>
+<h1 id="fog-monitor">Fog Monitor</h1>
 
-<h3 id="configure-fog-monitor-area">Configure Fog Monitor Area</h3>
+<h2 id="configure-fog-monitor-area">Configure Fog Monitor Area</h2>
 
-<h3 id="configure-algorithm-thresholds">Configure Algorithm Thresholds</h3>
+<h2 id="configure-algorithm-thresholds">Configure Algorithm Thresholds</h2>
 
-<h3 id="configure-visibility-thresholds-for-alertviz-monitoring">Configure Visibility Thresholds for Alertviz Monitoring</h3>
+<h2 id="configure-visibility-thresholds-for-alertviz-monitoring">Configure Visibility Thresholds for Alertviz Monitoring</h2>
 
-<h2 id="snow">SNOW</h2>
+<h1 id="snow">SNOW</h1>
 
-<h3 id="configure-snow-monitor-area">Configure SNOW Monitor Area</h3>
+<h2 id="configure-snow-monitor-area">Configure SNOW Monitor Area</h2>
 
-<h3 id="configure-snow-thresholds-for-alertviz-monitoring">Configure SNOW Thresholds for Alertviz Monitoring</h3>
+<h2 id="configure-snow-thresholds-for-alertviz-monitoring">Configure SNOW Thresholds for Alertviz Monitoring</h2>
 
     </article>
 

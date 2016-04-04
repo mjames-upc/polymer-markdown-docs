@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
 <meta name="google-site-verification" content="k0e8DrbD40s54xHNBqwIsRrSSAkZoprwtEYDnNY06bU" />
 <meta name="google-site-verification" content="pnjjbQFvjPwaWhEXY6nSyaS9iyghmH-M_yLHBveDX2M">
-<meta itemprop="name" content="AWIPS II - Introduction">
+<meta itemprop="name" content="AWIPS II - D2D Introduction">
 <meta itemprop="description" content="Polymer is a library that uses the latest web technologies to let you create custom HTML elements. Build anything from a button to a complete application as an encapsulated, reusable element that works across desktop and mobile.">
 
 
@@ -15,7 +15,7 @@
 
 <title>
   
-    Introduction -
+    D2D Introduction -
    AWIPS II
 </title>
 <link rel="publisher" href="https://plus.google.com/107187849809354688692">
@@ -34,7 +34,7 @@
 
 
 </head>
-<body id="introduction">
+<body id="d2d-introduction">
 
 <main id="content-container" class="polymer-content">
   <app-drawer id="sidebar" unresolved>
@@ -51,7 +51,7 @@
   </app-drawer>
 
   <scroll-area sidebar unresolved class="scrolling">
-    <site-banner type="guide" shortname="Docs" unresolved>
+    <site-banner type="" shortname="" unresolved>
       
 <app-bar theme="light" class="bar fixed">
 </app-bar>
@@ -59,8 +59,8 @@
       <header class="shrink">
         <h1>
         
-          D2D User Guide
-        : Introduction
+          CAVE User Guide
+        : D2D Introduction
         </h1>
       </header>
     </site-banner>
@@ -73,63 +73,22 @@
       <header class="onlyonmobile">
         <h1>
           
-          D2D User Guide
-          : Introduction
+          CAVE User Guide
+          : D2D Introduction
         </h1>
       </header>
 
-      
-<!--TOC_START-->
-<ul id="markdown-toc">
-  <li><a href="#switching-perspectives" id="markdown-toc-switching-perspectives">Switching Perspectives</a></li>
-  <li><a href="#d2d-toolbar" id="markdown-toc-d2d-toolbar">D2D Toolbar</a></li>
-  <li><a href="#resource-stack" id="markdown-toc-resource-stack">Resource Stack</a>    <ul>
-      <li><a href="#left-click-resource-name-to-hide" id="markdown-toc-left-click-resource-name-to-hide">Left-Click Resource Name to Hide</a></li>
-      <li><a href="#hold-right-click-resource-name-for-menu" id="markdown-toc-hold-right-click-resource-name-for-menu">Hold-Right-Click Resource Name for Menu</a></li>
-      <li><a href="#hold-right-click-the-map-background" id="markdown-toc-hold-right-click-the-map-background">Hold-Right-Click the Map Background</a></li>
-    </ul>
-  </li>
-  <li><a href="#product-browser" id="markdown-toc-product-browser">Product Browser</a></li>
-</ul>
-<!--TOC_END-->
+      <h1 id="d2d-toolbar">D2D Toolbar</h1>
 
-<p>D2D (Display 2-Dimensions) is the default AWIPS II CAVE perspective, designed to mimmic the look and feel of the legacy AWIPS I system.</p>
+<p>D2D (Display 2-Dimensions) is the default AWIPS II CAVE perspective, designed to mimmic the look and feel of the legacy AWIPS I system. Frame control, map projection, image properties, and a few featured applications make up the the primary D2D toolbar.</p>
+
+<p><img src="../images/iuNDS6J.png" alt="image" /></p>
 
 <h1 id="switching-perspectives">Switching Perspectives</h1>
 
 <p>D2D is one of many available CAVE perspectives.  By selecting the <strong>CAVE</strong> &gt; <strong>Perspective</strong> menu you can switch into the <strong>GFE</strong>, <strong>Hydro</strong>, <strong>Localization</strong>, <strong>MPE</strong>, or <strong>National Centers Perspective</strong> (which is available in the <strong>Other…</strong> submenu. Nobody seems to know why the NCP is not listed with the other perspectives, or how to make it appear with them).</p>
 
 <p><img src="../images/OU6rWMD.png" alt="image" /></p>
-
-<h1 id="d2d-toolbar">D2D Toolbar</h1>
-
-<p>Frame control, map projection, image properties, and a few featured applications make up the the primary D2D toolbar.</p>
-
-<p><img src="../images/iuNDS6J.png" alt="image" /></p>
-
-<ul>
-  <li>
-    <p><strong>CONUS</strong> is the default map display of the continental United States in a North Polar Stereographic projection. This menu allows you to select different projections.</p>
-  </li>
-  <li>
-    <p><strong>Clear</strong> will remove all non-system resources (meaning data) while preserving any map overlays you have added to the view.</p>
-  </li>
-  <li>
-    <p><img src="../images/qYgcjy2.png" alt="image" /> is a shortcut to <strong>Image Properties</strong> for the top-loaded image resource in the stack.</p>
-  </li>
-  <li>
-    <p><img src="../images/Fz5CTtf.png" alt="image" /> freezes and un-freezes panning (movement) of the map.</p>
-  </li>
-  <li>
-    <p><strong>Valid time seq</strong> is the default time-matching setting for loading data. Select this menu to switch to configurations such as Latest, No Backfill, Previous run, Prognosis loop, and more.</p>
-  </li>
-  <li>
-    <p><img src="../images/OZKVBSL.png" alt="image" /> controls the frame number, display, speed, etc.  You can also control the frames with the left and right keyboard keys.</p>
-  </li>
-  <li>
-    <p>Application links to <strong>Warngen</strong>, <strong>Ncdata</strong> (NCP GEMPAK-like grids), <strong>Nsharp</strong>, and the <strong>Product Browser</strong> are also available.</p>
-  </li>
-</ul>
 
 <h1 id="resource-stack">Resource Stack</h1>
 
