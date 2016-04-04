@@ -16,7 +16,7 @@ by default.
 
 ###  Install Bundler
 
-    gem install bundler jekyll
+    gem install bundler jekyll --user-install
 
 Bundler is a Ruby dependency manager. We use it to manage 
 Jekyll (the tool we use to generate static HTML from markdown), and 
