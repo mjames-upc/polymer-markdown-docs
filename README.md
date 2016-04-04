@@ -53,7 +53,7 @@ To install these tools globally, add a `-g` flag after `npm install`.
 Clone this repository. For sake of example, we'll assume you clone 
 it to `~/polymer-docs`.
 
-    git clone https://github.com/Unidata/polymer-docs.git
+    git clone https://github.com/mjames-upc/polymer-docs.git
 
 Change directories to this repository.
 
