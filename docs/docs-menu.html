@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
 <meta name="google-site-verification" content="k0e8DrbD40s54xHNBqwIsRrSSAkZoprwtEYDnNY06bU" />
 <meta name="google-site-verification" content="pnjjbQFvjPwaWhEXY6nSyaS9iyghmH-M_yLHBveDX2M">
-<meta itemprop="name" content="Polymer Documentation Theme - docs-menu">
+<meta itemprop="name" content="Polymer Docs - docs-menu">
 <meta itemprop="description" content="">
 
 <title>
   
     docs-menu -
-     Polymer Documentation Theme
+     Polymer Docs
 </title>
 <link rel="shortcut icon" href="http://www.unidata.ucar.edu/favicon.ico">
 <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
@@ -31,7 +31,7 @@
   <app-drawer id="sidebar" unresolved>
     <div layout vertical id="sidebar-content">
       <div id="logo-container" layout horizontal center>
-        <a href="/polymer-docs/" class="logo"><img src="/polymer-docs/images/logo.svg" alt="Polymer Documentation Theme"></a>
+        <a href="/polymer-docs/" class="logo"><img src="/polymer-docs/images/logo.svg" alt="Polymer Docs"></a>
       </div>
 
       <docs-menu unresolved flex
@@ -47,7 +47,7 @@
 
       <header class="shrink">
         <h1>
-        Polymer Documentation Theme : docs-menu
+        Polymer Docs : docs-menu
         </h1>
       </header>
     </site-banner>
@@ -59,30 +59,43 @@
 
       <header class="onlyonmobile">
         <h1>
-        Polymer Documentation Theme : docs-menu
+        Polymer Docs : docs-menu
         </h1>
       </header>
 
-      <p><code>elements/docs-menu.html</code> contains the collection of sidebar links.  You will need to edit this manually to organize <code>core-item</code> and <code>core-submenu</code> links.</p>
+      <p><a href="https://github.com/mjames-upc/polymer-docs/blob/master/elements/docs-menu.html"><code>elements/docs-menu.html</code></a> is a Polymer element that contains the sidebar menu. The <code>&lt;docs-menu&gt;</code> tag is called in <a href="https://github.com/mjames-upc/polymer-docs/blob/master/_layouts/default.html"><code>_layouts/default.html</code></a> as part of <code>&lt;app-drawer&gt;</code>:</p>
+
+<pre><code>&lt;app-drawer id="sidebar" unresolved&gt;
+  &lt;div layout vertical id="sidebar-content"&gt;
+    &lt;div id="logo-container" layout horizontal center&gt;
+      &lt;a href="/polymer-docs/" class="logo"&gt;&lt;img src="/polymer-docs/images/logo.svg" alt="Polymer Docs"&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;docs-menu unresolved flex
+             baseurl='/polymer-docs'
+             coreElements='{"core-header-panel":"components/core-header-panel/core-header-panel.html","core-transition-pages":"components/core-animated-pages/transitions/core-transition-pages.html","core-animated-pages":"components/core-animated-pages/core-animated-pages.html","core-overlay":"components/core-overlay/core-overlay.html","core-toolbar":"components/core-toolbar/core-toolbar.html","core-image":"components/core-image/core-image.html","core-shared-lib":"components/core-shared-lib/core-shared-lib.html","core-a11y-keys":"components/core-a11y-keys/core-a11y-keys.html","core-menu-button":"components/core-menu-button/core-menu-button.html","core-icon":"components/core-icon/core-icon.html","core-selection":"components/core-selection/core-selection.html","core-style":"components/core-style/core-style.html","core-menu":"components/core-menu/core-menu.html","core-submenu":"components/core-menu/core-submenu.html","core-list":"components/core-list/core-list.html","core-dropdown-menu":"components/core-dropdown-menu/core-dropdown-menu.html","core-input":"components/core-input/core-input.html","core-iconset-svg":"components/core-iconset-svg/core-iconset-svg.html","core-field":"components/core-field/core-field.html","core-selector":"components/core-selector/core-selector.html","core-media-query":"components/core-media-query/core-media-query.html","core-animation-group":"components/core-animation/core-animation-group.html","core-animation":"components/core-animation/core-animation.html","core-animation-keyframe":"components/core-animation/core-animation.html","core-animation-prop":"components/core-animation/core-animation.html","core-dropdown":"components/core-dropdown/core-dropdown.html","core-dropdown-base":"components/core-dropdown/core-dropdown-base.html","core-pages":"components/core-pages/core-pages.html","core-meta":"components/core-meta/core-meta.html","core-splitter":"components/core-splitter/core-splitter.html","core-scroll-header-panel":"components/core-scroll-header-panel/core-scroll-header-panel.html","core-tooltip":"components/core-tooltip/core-tooltip.html","core-localstorage":"components/core-localstorage/core-localstorage.html","core-scroll-threshold":"components/core-scroll-threshold/core-scroll-threshold.html","core-drag-drop":"components/core-drag-drop/core-drag-drop.html","core-iconset":"components/core-iconset/core-iconset.html","core-label":"components/core-label/core-label.html","core-signals":"components/core-signals/core-signals.html","core-transition":"components/core-transition/core-transition.html","core-scaffold":"components/core-scaffold/core-scaffold.html","core-drawer-panel":"components/core-drawer-panel/core-drawer-panel.html","core-range":"components/core-range/core-range.html","core-collapse":"components/core-collapse/core-collapse.html","core-xhr":"components/core-ajax/core-xhr.html","core-ajax":"components/core-ajax/core-ajax.html","core-icon-button":"components/core-icon-button/core-icon-button.html","core-item":"components/core-item/core-item.html"}'
+             paperElements='{"paper-dropdown":"components/paper-dropdown/paper-dropdown.html","paper-dropdown-transition":"components/paper-dropdown/paper-dropdown-transition.html","paper-item":"components/paper-item/paper-item.html","paper-dropdown-menu":"components/paper-dropdown-menu/paper-dropdown-menu.html","paper-checkbox":"components/paper-checkbox/paper-checkbox.html","paper-button":"components/paper-button/paper-button.html","paper-button-base":"components/paper-button/paper-button-base.html","paper-menu-button":"components/paper-menu-button/paper-menu-button.html","paper-radio-group":"components/paper-radio-group/paper-radio-group.html","paper-toast":"components/paper-toast/paper-toast.html","paper-char-counter":"components/paper-input/paper-char-counter.html","paper-autogrow-textarea":"components/paper-input/paper-autogrow-textarea.html","paper-input":"components/paper-input/paper-input.html","paper-input-decorator":"components/paper-input/paper-input-decorator.html","paper-slider":"components/paper-slider/paper-slider.html","paper-toggle-button":"components/paper-toggle-button/paper-toggle-button.html","paper-fab":"components/paper-fab/paper-fab.html","paper-ripple":"components/paper-ripple/paper-ripple.html","paper-icon-button":"components/paper-icon-button/paper-icon-button.html","paper-tabs":"components/paper-tabs/paper-tabs.html","paper-tab":"components/paper-tabs/paper-tab.html","paper-shadow":"components/paper-shadow/paper-shadow.html","paper-radio-button":"components/paper-radio-button/paper-radio-button.html","paper-dialog":"components/paper-dialog/paper-dialog.html","paper-action-dialog":"components/paper-dialog/paper-action-dialog.html","paper-dialog-base":"components/paper-dialog/paper-dialog-base.html","paper-dialog-transition":"components/paper-dialog/paper-dialog-transition.html","paper-spinner":"components/paper-spinner/paper-spinner.html","paper-progress":"components/paper-progress/paper-progress.html"}'&gt;&lt;/docs-menu&gt;
+  &lt;/div&gt;
+&lt;/app-drawer&gt;
+</code></pre>
+
+<p>You will need to edit this manually to organize <code>core-item</code> and <code>core-submenu</code> links.  And be sure to understand how to organize <a href="pages.html">Markdown pages</a> for your docs.</p>
 
 <pre><code>&lt;core-menu id="mainmenu" on-click="" selectedItem="" fit&gt;
 
-  &lt;core-item label="Installation" icon="info"&gt;
-    &lt;a href="/"&gt;&lt;/a&gt;
-  &lt;/core-item&gt;
-  &lt;core-item label="Config" icon="settings"&gt;
-    &lt;a href="/docs/config.html"&gt;&lt;/a&gt;
-  &lt;/core-item&gt;
-  &lt;core-item label="Pages" icon="description"&gt;
-    &lt;a href="/docs/pages.html"&gt;&lt;/a&gt;
-  &lt;/core-item&gt;
-  &lt;core-item label="docs-menu" icon="list"&gt;
-    &lt;a href="/docs/docs-menu.html"&gt;&lt;/a&gt;
-  &lt;/core-item&gt;
-
-  &lt;core-submenu label="Appendix" icon="expand-more"&gt;
-    &lt;core-item label="Acronyms and abbreviations"&gt;&lt;a href="/docs/appendix-acronyms.html"&gt;&lt;/a&gt;&lt;/core-item&gt;
-    &lt;core-item label="COTS and FOSS"&gt;&lt;a href="/docs/appendix-cots.html"&gt;&lt;/a&gt;&lt;/core-item&gt;
+  &lt;core-submenu label="Overview" icon="info"&gt;
+    &lt;core-item label="How to install"&gt;
+      &lt;a href="/"&gt;&lt;/a&gt;
+    &lt;/core-item&gt;
+    &lt;core-item label="Jekyll Configuration"&gt;
+      &lt;a href="/docs/config.html"&gt;&lt;/a&gt;
+    &lt;/core-item&gt;
+    &lt;core-item label="Markdown Pages"&gt;
+      &lt;a href="/docs/pages.html"&gt;&lt;/a&gt;
+    &lt;/core-item&gt;
+    &lt;core-item label="docs-menu.html"&gt;
+      &lt;a href="/docs/docs-menu.html"&gt;&lt;/a&gt;
+    &lt;/core-item&gt;
   &lt;/core-submenu&gt;
 
   &lt;core-item label="on GitHub" icon="launch"&gt;
