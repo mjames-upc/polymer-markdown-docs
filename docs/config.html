@@ -6,41 +6,32 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
 <meta name="google-site-verification" content="k0e8DrbD40s54xHNBqwIsRrSSAkZoprwtEYDnNY06bU" />
 <meta name="google-site-verification" content="pnjjbQFvjPwaWhEXY6nSyaS9iyghmH-M_yLHBveDX2M">
-<meta itemprop="name" content="AWIPS II - Behaviors">
-<meta itemprop="description" content="Polymer is a library that uses the latest web technologies to let you create custom HTML elements. Build anything from a button to a complete application as an encapsulated, reusable element that works across desktop and mobile.">
-
-
-<meta itemprop="image" content="https://www.polymer-project.org/images/instacod.png">
-
+<meta itemprop="name" content="Polymer Documentation Theme - Jekyll Config">
+<meta itemprop="description" content="">
 
 <title>
   
-    Behaviors -
-   AWIPS II
+    Jekyll Config -
+     Polymer Documentation Theme
 </title>
-<link rel="publisher" href="https://plus.google.com/107187849809354688692">
 <link rel="shortcut icon" href="http://www.unidata.ucar.edu/favicon.ico">
 <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
 <link href="/polymer-docs/css/site2.css?20160403" rel="stylesheet">
 <link href="/polymer-docs/css/site2_sd_rules.css?20160403" rel="stylesheet" shim-shadowdom>
-
-
-
 <script src="/polymer-docs/components/webcomponentsjs/webcomponents.min.js?20160403"></script>
-<!-- TODO: remove when https://github.com/Polymer/polymer/issues/391 is fixed -->
 <link rel="import" href="/polymer-docs/components/polymer/polymer.html">
 <link rel="stylesheet" href="/polymer-docs/css/elements/docs-menu.css">
 <link rel="import" href="/polymer-docs/elements/common_elements.vulcanized.html?20160403">
 
 
 </head>
-<body id="behaviors">
+<body id="jekyll-config">
 
 <main id="content-container" class="polymer-content">
   <app-drawer id="sidebar" unresolved>
     <div layout vertical id="sidebar-content">
       <div id="logo-container" layout horizontal center>
-        <a href="/polymer-docs/" class="logo"><img src="/polymer-docs/images/logos/awips2.png" alt="AWIPS II User Guide"></a>
+        <a href="/polymer-docs/" class="logo"><img src="/polymer-docs/images/logo.svg" alt="Polymer Documentation Theme"></a>
       </div>
 
       <docs-menu unresolved flex
@@ -51,16 +42,14 @@
   </app-drawer>
 
   <scroll-area sidebar unresolved class="scrolling">
-    <site-banner type="guide" shortname="Docs" unresolved>
+    <site-banner type="" shortname="" unresolved>
       
 <app-bar theme="light" class="bar fixed">
 </app-bar>
 
       <header class="shrink">
         <h1>
-        
-          EDEX Admin
-        : Behaviors
+        Polymer Documentation Theme : Jekyll Config
         </h1>
       </header>
     </site-banner>
@@ -72,135 +61,17 @@
 
       <header class="onlyonmobile">
         <h1>
-          
-          EDEX Admin
-          : Behaviors
+        Polymer Documentation Theme : Jekyll Config
         </h1>
       </header>
 
-      
-<!--TOC_START-->
-<ul id="markdown-toc">
-  <li><a href="#defining-behaviors" id="markdown-toc-defining-behaviors">Defining behaviors</a></li>
-  <li><a href="#extending" id="markdown-toc-extending">Extending behaviors</a></li>
-</ul>
-<!--TOC_END-->
+      <p><code>_config.yml</code> contains import definitions used throughout the project.  These should all be changed for your project.</p>
 
-<p>AWIPS II supports extending custom element prototypes with 
-shared code modules called <em>behaviors</em>.</p>
-
-<p>A behavior is an object that looks similar to a typical
-AWIPS II prototype.  A behavior can define <a href="registering-elements.html#basic-callbacks">lifecycle callbacks
-</a>,  <a href="properties.html">declared
-properties</a>, <a href="registering-elements.html#host-attributes">default attributes</a>,
-<a href="properties.html#observing-changes-to-multiple-properties"><code>observers</code></a>, and <a href="events.html#event-listeners"><code>listeners</code></a>.</p>
-
-<p>To add a behavior to a AWIPS II element definition, include it in a
-<code>behaviors</code> array on the prototype.</p>
-
-<pre><code>Polymer({
-  is: 'super-element',
-  behaviors: [SuperBehavior]
-});
+<pre><code>project_name: 'Polymer Documentation Theme'
+github_user: mjames-upc
+github_project: polymer-docs
+baseurl: /polymer-docs
 </code></pre>
-
-<p>For lifecycle events, the lifecycle callback is called for each 
-behavior in the order given in the <code>behaviors</code> array, followed by the 
-callback on the prototype.</p>
-
-<p>Any non-lifecycle functions on the behavior object are mixed into
-the base prototype, <strong>unless the prototype already defines a function 
-of the same name.</strong>  If multiple behaviors define the same function, the 
-<strong>last</strong> behavior in the <code>behaviors</code> array takes precedence over other 
-behaviors.</p>
-
-<h2 id="defining-behaviors">Defining behaviors</h2>
-
-<p>To define a behavior, create a JavaScript object that you can reference from your element definition.
-The following example simply adds <code>HighlightBehavior</code> to the global scope:</p>
-
-<p><code>highlight-behavior.html</code>:</p>
-
-<pre><code>&lt;script&gt;
-    HighlightBehavior = {
-
-      properties: {
-        isHighlighted: {
-          type: Boolean,
-          value: false,
-          notify: true,
-          observer: '_highlightChanged'
-        }
-      },
-      
-      listeners: {
-        click: '_toggleHighlight'
-      },
-      
-      created: function() {
-        console.log('Highlighting for ', this, 'enabled!');
-      },
-
-      _toggleHighlight: function() {
-        this.isHighlighted = !this.isHighlighted;
-      },
-      
-      _highlightChanged: function(value) {
-        this.toggleClass('highlighted', value);
-      }
-
-    };
-&lt;/script&gt;
-</code></pre>
-
-<p><code>my-element.html</code>:</p>
-
-<pre><code>&lt;link rel="import" href="highlight-behavior.html"&gt;
-
-&lt;script&gt;
-  Polymer({
-    is: 'my-element',
-    behaviors: [HighlightBehavior]
-  });
-&lt;/script&gt;
-</code></pre>
-
-<p>AWIPS II doesn’t specify any
-particular method for referencing your behaviors. Behaviors created by the AWIPS II
-team are added to the AWIPS II object. When creating your own behaviors, you should 
-use some other namespace to avoid collisions with future AWIPS II behaviors. For example:</p>
-
-<pre><code>window.MyBehaviors = window.MyBehaviors || {};
-MyBehaviors.HighlightBehavior = { ... }
-</code></pre>
-
-<p>Here the <code>MyBehaviors</code> namespace is explicitly added to the global <code>window</code> object, so the behavior can be referenced from your elements as <code>MyBehaviors.HighlightBehavior</code>.</p>
-
-<h2 id="extending">Extending behaviors</h2>
-
-<p>To extend a behavior, or create a behavior that includes an existing behavior, you can define a 
-behavior as an array of behaviors:</p>
-
-<pre><code>&lt;!-- import an existing behavior --&gt;
-&lt;link rel="import" href="oldbehavior.html"&gt;
-
-&lt;script&gt;
-  // Implement the extended behavior
-  NewBehaviorImpl = {
-    // new stuff here 
-  }
-
-  // Define the behavior
-  NewBehavior = [ OldBehavior, NewBehaviorImpl ]
-&lt;/script&gt;
-</code></pre>
-
-<p>As with the element’s <code>behaviors</code> array, the rightmost behavior takes precedence over behaviors earlier in the array. 
-In this case, anything defined in <code>NewBehaviorImpl</code> takes precedence over anything defined in <code>OldBehavior</code>.</p>
-
-<p>Naming each element in the behavior array is a good practice, since it allows behaviors to explicitly reference methods 
-on the behaviors they extend (for example, <code>NewBehaviorImpl</code> can call to methods on <code>OldBehavior</code>).</p>
-
 
     </article>
 
@@ -209,8 +80,8 @@ on the behaviors they extend (for example, <code>NewBehaviorImpl</code> can call
     <div class="links">
       <a href="https://www.facebook.com/unidata" title="Unidata on Facebook" tabindex="-1"><paper-button><core-icon icon="social:post-facebook"></core-icon>Facebook</paper-button></a>
       <a href="https://twitter.com/intent/follow?screen_name=unidata" data-twitter-follow title="Follow @Unidata on Twitter" tabindex="-1"><paper-button><core-icon icon="social:post-twitter"></core-icon>Twitter</paper-button></a>
-      <a href="https://github.com/Unidata/awips2"><paper-button class="github" tabindex="-1"><core-icon icon="social:post-github"></core-icon>GitHub</paper-button></a>
-      <a href="https://github.com/Unidata/awips2/issues/new" tabindex="-1"><paper-button><core-icon icon="bug-report"></core-icon>File a bug</paper-button></a>
+      <a href="https://github.com/mjames-upc/polymer-docs"><paper-button class="github" tabindex="-1"><core-icon icon="social:post-github"></core-icon>GitHub</paper-button></a>
+      <a href="https://github.com/mjames-upc/polymer-docs/issues/new" tabindex="-1"><paper-button><core-icon icon="bug-report"></core-icon>File a bug</paper-button></a>
     </div>
 
   </div>

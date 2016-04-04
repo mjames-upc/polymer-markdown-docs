@@ -6,41 +6,32 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
 <meta name="google-site-verification" content="k0e8DrbD40s54xHNBqwIsRrSSAkZoprwtEYDnNY06bU" />
 <meta name="google-site-verification" content="pnjjbQFvjPwaWhEXY6nSyaS9iyghmH-M_yLHBveDX2M">
-<meta itemprop="name" content="AWIPS II - Download and Install CAVE">
-<meta itemprop="description" content="Polymer is a library that uses the latest web technologies to let you create custom HTML elements. Build anything from a button to a complete application as an encapsulated, reusable element that works across desktop and mobile.">
-
-
-<meta itemprop="image" content="https://www.polymer-project.org/images/instacod.png">
-
+<meta itemprop="name" content="Polymer Documentation Theme - docs-menu">
+<meta itemprop="description" content="">
 
 <title>
   
-    Download and Install CAVE -
-   AWIPS II
+    docs-menu -
+     Polymer Documentation Theme
 </title>
-<link rel="publisher" href="https://plus.google.com/107187849809354688692">
 <link rel="shortcut icon" href="http://www.unidata.ucar.edu/favicon.ico">
 <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
 <link href="/polymer-docs/css/site2.css?20160403" rel="stylesheet">
 <link href="/polymer-docs/css/site2_sd_rules.css?20160403" rel="stylesheet" shim-shadowdom>
-
-
-
 <script src="/polymer-docs/components/webcomponentsjs/webcomponents.min.js?20160403"></script>
-<!-- TODO: remove when https://github.com/Polymer/polymer/issues/391 is fixed -->
 <link rel="import" href="/polymer-docs/components/polymer/polymer.html">
 <link rel="stylesheet" href="/polymer-docs/css/elements/docs-menu.css">
 <link rel="import" href="/polymer-docs/elements/common_elements.vulcanized.html?20160403">
 
 
 </head>
-<body id="download-and-install-cave">
+<body id="docs-menu">
 
 <main id="content-container" class="polymer-content">
   <app-drawer id="sidebar" unresolved>
     <div layout vertical id="sidebar-content">
       <div id="logo-container" layout horizontal center>
-        <a href="/polymer-docs/" class="logo"><img src="/polymer-docs/images/logos/awips2.png" alt="AWIPS II User Guide"></a>
+        <a href="/polymer-docs/" class="logo"><img src="/polymer-docs/images/logo.svg" alt="Polymer Documentation Theme"></a>
       </div>
 
       <docs-menu unresolved flex
@@ -58,7 +49,7 @@
 
       <header class="shrink">
         <h1>
-         Download and Install CAVE
+        Polymer Documentation Theme : docs-menu
         </h1>
       </header>
     </site-banner>
@@ -70,41 +61,38 @@
 
       <header class="onlyonmobile">
         <h1>
-          : Download and Install CAVE
+        Polymer Documentation Theme : docs-menu
         </h1>
       </header>
 
-      <h2 id="os-x">OS X</h2>
+      <p><code>elements/docs-menu.html</code> contains the collection of sidebar links.  You will need to edit this manually to organize <code>core-item</code> and <code>core-submenu</code> links.</p>
 
-<p>Download <a href="http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg">awips2-cave.dmg</a> (263 MB)</p>
+<pre><code>&lt;core-menu id="mainmenu" on-click="" selectedItem="" fit&gt;
 
-<h2 id="linux">Linux</h2>
+  &lt;core-item label="Installation" icon="info"&gt;
+    &lt;a href="/"&gt;&lt;/a&gt;
+  &lt;/core-item&gt;
+  &lt;core-item label="Config" icon="settings"&gt;
+    &lt;a href="/docs/config.html"&gt;&lt;/a&gt;
+  &lt;/core-item&gt;
+  &lt;core-item label="Pages" icon="description"&gt;
+    &lt;a href="/docs/pages.html"&gt;&lt;/a&gt;
+  &lt;/core-item&gt;
+  &lt;core-item label="docs-menu" icon="list"&gt;
+    &lt;a href="/docs/docs-menu.html"&gt;&lt;/a&gt;
+  &lt;/core-item&gt;
 
-<p>Download and run the script <a href="http://www.unidata.ucar.edu/software/awips2/installCAVE.sh">installCAVE.sh</a>.</p>
+  &lt;core-submenu label="Appendix" icon="expand-more"&gt;
+    &lt;core-item label="Acronyms and abbreviations"&gt;&lt;a href="/docs/appendix-acronyms.html"&gt;&lt;/a&gt;&lt;/core-item&gt;
+    &lt;core-item label="COTS and FOSS"&gt;&lt;a href="/docs/appendix-cots.html"&gt;&lt;/a&gt;&lt;/core-item&gt;
+  &lt;/core-submenu&gt;
 
-<pre><code>wget http://www.unidata.ucar.edu/software/awips2/installCAVE.sh
-chmod 755 ./installCAVE.sh
-./installCAVE.sh
+  &lt;core-item label="on GitHub" icon="launch"&gt;
+    &lt;a href="https://github.com/mjames-upc/polymer-docs" target="_blank"&gt;&lt;/a&gt;
+  &lt;/core-item&gt;
+
+&lt;/core-menu&gt;
 </code></pre>
-
-<p>This will install to <code>/awips2/cave</code> and <code>/awips2/alertviz</code> (as well as awips2 system directories like <code>/awips2/java</code> and <code>/awips2/python</code>).</p>
-
-<h2 id="run-cave">Run CAVE</h2>
-
-<p>Run cave with the command</p>
-
-<pre><code>/awips2/cave/cave.sh
-</code></pre>
-
-<blockquote>
-  <p>AWIPS II was originally built for 32-bit Red Hat 5 (which is what the old AWIPS I system runs on).  As of 2016, 64-bit RHEL and CentOS 6 are supported, and Fedora Linux 9-12 should work as well.   <strong>Unsupported distros</strong> include CentOS 7, Ubuntu, Debian, and pretty much everthing else.</p>
-</blockquote>
-
-<h1 id="awips-ii-data-in-the-cloud">AWIPS II Data in the Cloud</h1>
-
-<p>Unidata and Microsoft have partnered to offer a EDEX data server in the Azure cloud, open to the Unidata university community and the public.  Select the server in the Connectivity Preferences dialog, or enter <strong><code>edex-cloud.unidata.ucar.edu</code></strong></p>
-
-<p><img src="../images/boEbFSf28t.gif" alt="EDEX in the cloud" /></p>
 
 
     </article>
@@ -114,8 +102,8 @@ chmod 755 ./installCAVE.sh
     <div class="links">
       <a href="https://www.facebook.com/unidata" title="Unidata on Facebook" tabindex="-1"><paper-button><core-icon icon="social:post-facebook"></core-icon>Facebook</paper-button></a>
       <a href="https://twitter.com/intent/follow?screen_name=unidata" data-twitter-follow title="Follow @Unidata on Twitter" tabindex="-1"><paper-button><core-icon icon="social:post-twitter"></core-icon>Twitter</paper-button></a>
-      <a href="https://github.com/Unidata/awips2"><paper-button class="github" tabindex="-1"><core-icon icon="social:post-github"></core-icon>GitHub</paper-button></a>
-      <a href="https://github.com/Unidata/awips2/issues/new" tabindex="-1"><paper-button><core-icon icon="bug-report"></core-icon>File a bug</paper-button></a>
+      <a href="https://github.com/mjames-upc/polymer-docs"><paper-button class="github" tabindex="-1"><core-icon icon="social:post-github"></core-icon>GitHub</paper-button></a>
+      <a href="https://github.com/mjames-upc/polymer-docs/issues/new" tabindex="-1"><paper-button><core-icon icon="bug-report"></core-icon>File a bug</paper-button></a>
     </div>
 
   </div>

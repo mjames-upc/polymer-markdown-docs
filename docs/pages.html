@@ -6,41 +6,32 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
 <meta name="google-site-verification" content="k0e8DrbD40s54xHNBqwIsRrSSAkZoprwtEYDnNY06bU" />
 <meta name="google-site-verification" content="pnjjbQFvjPwaWhEXY6nSyaS9iyghmH-M_yLHBveDX2M">
-<meta itemprop="name" content="AWIPS II - Utility functions">
-<meta itemprop="description" content="Polymer is a library that uses the latest web technologies to let you create custom HTML elements. Build anything from a button to a complete application as an encapsulated, reusable element that works across desktop and mobile.">
-
-
-<meta itemprop="image" content="https://www.polymer-project.org/images/instacod.png">
-
+<meta itemprop="name" content="Polymer Documentation Theme - Markdown Pages">
+<meta itemprop="description" content="">
 
 <title>
   
-    Utility functions -
-   AWIPS II
+    Markdown Pages -
+     Polymer Documentation Theme
 </title>
-<link rel="publisher" href="https://plus.google.com/107187849809354688692">
 <link rel="shortcut icon" href="http://www.unidata.ucar.edu/favicon.ico">
 <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
 <link href="/polymer-docs/css/site2.css?20160403" rel="stylesheet">
 <link href="/polymer-docs/css/site2_sd_rules.css?20160403" rel="stylesheet" shim-shadowdom>
-
-
-
 <script src="/polymer-docs/components/webcomponentsjs/webcomponents.min.js?20160403"></script>
-<!-- TODO: remove when https://github.com/Polymer/polymer/issues/391 is fixed -->
 <link rel="import" href="/polymer-docs/components/polymer/polymer.html">
 <link rel="stylesheet" href="/polymer-docs/css/elements/docs-menu.css">
 <link rel="import" href="/polymer-docs/elements/common_elements.vulcanized.html?20160403">
 
 
 </head>
-<body id="utility-functions">
+<body id="markdown-pages">
 
 <main id="content-container" class="polymer-content">
   <app-drawer id="sidebar" unresolved>
     <div layout vertical id="sidebar-content">
       <div id="logo-container" layout horizontal center>
-        <a href="/polymer-docs/" class="logo"><img src="/polymer-docs/images/logos/awips2.png" alt="AWIPS II User Guide"></a>
+        <a href="/polymer-docs/" class="logo"><img src="/polymer-docs/images/logo.svg" alt="Polymer Documentation Theme"></a>
       </div>
 
       <docs-menu unresolved flex
@@ -51,16 +42,14 @@
   </app-drawer>
 
   <scroll-area sidebar unresolved class="scrolling">
-    <site-banner type="guide" shortname="Docs" unresolved>
+    <site-banner type="" shortname="" unresolved>
       
 <app-bar theme="light" class="bar fixed">
 </app-bar>
 
       <header class="shrink">
         <h1>
-        
-          EDEX Admin
-        : Utility functions
+        Polymer Documentation Theme : Markdown Pages
         </h1>
       </header>
     </site-banner>
@@ -72,119 +61,20 @@
 
       <header class="onlyonmobile">
         <h1>
-          
-          EDEX Admin
-          : Utility functions
+        Polymer Documentation Theme : Markdown Pages
         </h1>
       </header>
 
-      
-<!--TOC_START-->
-<ul id="markdown-toc">
-  <li><a href="#utility-functions" id="markdown-toc-utility-functions">Utility Functions</a></li>
-</ul>
-<!--TOC_END-->
+      <p>Markdown files stored in the <code>docs</code> directory will be converted to HTML.  Each Markdown file must contain a header containing the following</p>
 
-<h2 id="utility-functions">Utility Functions</h2>
-
-<p>All AWIPS II elements inherit from <code>AWIPS II.Base</code>, which 
-provides a set of useful convenience functions for instances to use.</p>
-
-<ul>
-  <li>
-    <p><code>$$(selector)</code>. Returns the first node in this element’s local DOM that matches
-<code>selector</code>.</p>
-  </li>
-  <li>
-    <p><code>toggleClass(name, bool, [node])</code>. Toggles the named boolean class on the
-host element, adding the class if <code>bool</code> is truthy and removing it if
-<code>bool</code> is falsey. If <code>node</code> is specified, sets the class on <code>node</code> instead
-of the host element.</p>
-  </li>
-  <li>
-    <p><code>toggleAttribute(name, bool, [node])</code>. Like <code>toggleClass</code>, but toggles the named boolean attribute.</p>
-  </li>
-  <li>
-    <p><code>attributeFollows(name, newNode, oldNode)</code>. Moves a boolean attribute from <code>oldNode</code> to
-<code>newNode</code>, unsetting the attribute (if set) on <code>oldNode</code> and setting it on <code>newNode</code>.</p>
-  </li>
-  <li>
-    <p><code>classFollows(name, newNode, oldNode)</code>. Moves a class from <code>oldNode</code> to
-<code>newNode</code>, removing the class (if present) on <code>oldNode</code> and adding it to <code>newNode</code>.</p>
-  </li>
-  <li>
-    <p><code>fire(type, [detail], [options])</code>. Fires a custom event. The <code>options</code> object can contain
-  the following properties:</p>
-
-    <ul>
-      <li>
-        <p><code>node</code>. Node to fire the event on (defaults to <code>this</code>).</p>
-      </li>
-      <li>
-        <p><code>bubbles</code>. Whether the event should bubble. Defaults to <code>true</code>.</p>
-      </li>
-      <li>
-        <p><code>cancelable</code>. Whether the event can be canceled with <code>preventDefault</code>. Defaults to <code>false</code>.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><code>async(method, [wait])</code>. Calls <code>method</code> asynchronously. If no wait time is specified,
-runs tasks with microtask timing (after the current method finishes, but before the 
-next event from the event queue is processed). Returns a handle that can be used to cancel
-the task.</p>
-  </li>
-  <li>
-    <p><code>cancelAsync(handle)</code>. Cancels the identified async task.</p>
-  </li>
-  <li>
-    <p><code>debounce(jobName, callback, [wait])</code>. Call <code>debounce</code> to collapse multiple 
-requests for a named task into one invocation, which is made after the wait 
-time has elapsed with no new request.  If no wait time is given, the callback 
-is called at microtask timing (guaranteed to be before paint).</p>
-  </li>
-  <li>
-    <p><code>cancelDebouncer(jobName)</code>. Cancels an active debouncer without calling the callback.</p>
-  </li>
-  <li>
-    <p><code>flushDebouncer(jobName)</code>. Calls the debounced callback immediately and cancels the debouncer.</p>
-  </li>
-  <li>
-    <p><code>isDebouncerActive(jobName)</code>. Returns true if the named debounce task is waiting to run.</p>
-  </li>
-  <li>
-    <p><code>transform(transform, [node])</code>. Applies a CSS transform to the specified node,
-or host element if no node is specified.
-<code>transform</code> is specified as a string. For example:</p>
-
-    <pre><code> this.transform('rotateX(90deg)', this.$.myDiv);
-</code></pre>
-  </li>
-  <li>
-    <p><code>translate3d(x, y, z, [node])</code>. Transforms the specified node, or host element
-if no node is specified. For example:</p>
-
-    <pre><code>this.translate3d('100px', '100px', '100px');
-</code></pre>
-  </li>
-  <li>
-    <p><code>importHref(href, onload, onerror)</code>. Dynamically imports an HTML document.</p>
-
-    <pre><code>this.importHref('path/to/page.html', function(e) {
-    // e.target.import is the import document.
-}, function(e) {
-    // loading error
-});
+<pre><code>---
+layout: default
+title: Page Title
+subtitle: Page Subtitle
+---
 </code></pre>
 
-    <p class="alert alert-info"><strong>Note:</strong> To call <code>importHref</code> from outside a Polymer element, use <code>Polymer.Base.importHref</code>.</p>
-  </li>
-  <li>
-    <p><code>resolveUrl(url)</code>. Takes a URL relative to the <code>&lt;dom-module&gt;</code> of an imported AWIPS II 
-element, and returns a path relative to the current document. This method can be used, for example,
-to refer to an asset delivered alongside an HTML import.</p>
-  </li>
-</ul>
+<p>These Markdown file names correspond to the linked names in the file <code>elements/docs-menu.html</code>, which contains the collection of sidebar links that you see on this page.</p>
 
     </article>
 
@@ -193,8 +83,8 @@ to refer to an asset delivered alongside an HTML import.</p>
     <div class="links">
       <a href="https://www.facebook.com/unidata" title="Unidata on Facebook" tabindex="-1"><paper-button><core-icon icon="social:post-facebook"></core-icon>Facebook</paper-button></a>
       <a href="https://twitter.com/intent/follow?screen_name=unidata" data-twitter-follow title="Follow @Unidata on Twitter" tabindex="-1"><paper-button><core-icon icon="social:post-twitter"></core-icon>Twitter</paper-button></a>
-      <a href="https://github.com/Unidata/awips2"><paper-button class="github" tabindex="-1"><core-icon icon="social:post-github"></core-icon>GitHub</paper-button></a>
-      <a href="https://github.com/Unidata/awips2/issues/new" tabindex="-1"><paper-button><core-icon icon="bug-report"></core-icon>File a bug</paper-button></a>
+      <a href="https://github.com/mjames-upc/polymer-docs"><paper-button class="github" tabindex="-1"><core-icon icon="social:post-github"></core-icon>GitHub</paper-button></a>
+      <a href="https://github.com/mjames-upc/polymer-docs/issues/new" tabindex="-1"><paper-button><core-icon icon="bug-report"></core-icon>File a bug</paper-button></a>
     </div>
 
   </div>
