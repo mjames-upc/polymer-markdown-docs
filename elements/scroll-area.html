@@ -68,13 +68,13 @@
     },
     init: function() {
       var siteBanner = this.querySelector('site-banner');
-      this.appBar = siteBanner.querySelector('app-bar');
+      //this.appBar = siteBanner.querySelector('app-bar');
       this.header = siteBanner.querySelector('header');
 
       // Give DOM some time to do layout.
       this.async(function() {
         this.siteBannerHeight = siteBanner.offsetHeight;
-        this.appBarHeight = this.appBar.offsetHeight;
+        //this.appBarHeight = this.appBar.offsetHeight;
       });
 
       // For testing.
