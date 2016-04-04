@@ -1,5 +1,5 @@
-project_name: 'Project Name'
-github_user: Unidata
+project_name: 'Polymer Documentation Theme'
+github_user: mjames-upc
 github_project: polymer-docs
 baseurl: /polymer-docs
 

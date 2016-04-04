@@ -24,9 +24,7 @@
       {% include top-nav.html %}
       <header class="shrink">
         <h1>
-        {% if page.subtitle %}
-          {{page.subtitle}}
-        {% endif %}: {{page.title}}
+        {{ site.project_name }} : {{page.title}}
         </h1>
       </header>
     </site-banner>
@@ -53,9 +51,7 @@
 
       <header class="onlyonmobile">
         <h1>
-          {% if page.subtitle %}
-          {{page.subtitle}}
-          {% endif %}: {{page.title}}
+        {{ site.project_name }} : {{page.title}}
         </h1>
       </header>
 
