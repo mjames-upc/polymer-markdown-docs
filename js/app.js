@@ -104,6 +104,7 @@ function injectPage(url, opt_addToHistory) {
     exports.recordPageview();
 
     // Update app-bar links.
+    /*
     var docAppBar = doc.querySelector('app-bar');
     if (docAppBar) {
       appBar.badge = docAppBar.getAttribute('badge');
@@ -113,6 +114,7 @@ function injectPage(url, opt_addToHistory) {
       location.href = url;
       return;
     }
+    */
 
     // Inject article body.
     var CONTAINER_SELECTOR = '#content-container scroll-area article';
