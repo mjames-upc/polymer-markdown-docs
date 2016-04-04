@@ -1,7 +1,6 @@
 project_title: 'AWIPS II'
-project_status: 'Dev preview'
-project_author: mjames-upc
-baseurl: /polymer-docs
+project_author: Unidata
+baseurl: /awips2
 
 markdown: kramdown
 highlighter: true
