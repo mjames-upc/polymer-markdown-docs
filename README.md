@@ -1,9 +1,11 @@
-Polymer docs are mostly in Markdown with some HTML. [Jekyll][jekyll] is used 
-to generate the static HTML for the site. The output is generated into a 
-folder called `_site` and served by Jekyll locally, as well as on Github Pages.
+This is a boilerplate documentation framework for Github Pages
+using Markdown. This project is based on 
+[Polymer/docs](https://github.com/Polymer/docs).
 
-We use Jekyll 3.1 and [Grunt][grunt] to generate the documentation, and compass to compile SASS to CSS.
-
+[Jekyll][https://jekyllrb.com] and [Grunt](https://gruntjs.com) 
+are used to generate static HTML in a folder called `_site`. SASS 
+is converted to CSS. The `_site` folder can be served locally for
+development, and can be pushed to Github Pages.
 
 ## Setup
 
@@ -54,37 +56,19 @@ Clone this repository. For sake of example, we'll assume you clone
 it to `~/polymer-docs`.
 
     git clone https://github.com/mjames-upc/polymer-docs.git
-
-Change directories to this repository.
-
     cd polymer-docs
 
-Install Jekyll and its dependencies:
-
     bundle install
-
-Install Grunt and various other tools for building / deploying the site: 
-
     npm install
-
-`npm` reads `package.json` and installs all of the dependencies
-it finds into `node_modules`.
-
-Install bower dependencies for Polymer:
-
     bower install
 
-### Build the app:
-
-    grunt docs
+    ./deploy.sh
 
 ### Deploy the app
 
-With Jekyll
-
     jekyll serve
     
-and point a browser to 
+point a browser to 
 
     http://127.0.0.1:4000/polymer-docs/
 
@@ -92,6 +76,8 @@ Once your changes look good, `git commit` them and push.
 
 
 ### Release
+
+Run `./deploy.sh` and a new `_site` directory is created and trimmed of fat. You can manually copy the contents of this directory to another repo gh-pages branch and push to local, just be certain that variables defined in `_config.yml` are correct for where the pages end up (e.g. http://username.github.io/project-name/).
 
 Run `bower update` to make sure you have the latest component dependencies.
 
