@@ -1,33 +1,35 @@
 ---
+title: Download and Install CAVE
 layout: default
-type: guide
-shortname: Docs
-title: Install CAVE
-subtitle: Install & Config
 ---
 
-# x86_64 CentOS/RHEL/Fedora Linux
+
+## OS X
+
+Download [awips2-cave.dmg](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg) (263 MB)
+
+
+## Linux
+
+Download and run the script [installCAVE.sh](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh).
 
     wget http://www.unidata.ucar.edu/software/awips2/installCAVE.sh
     chmod 755 ./installCAVE.sh
     ./installCAVE.sh
 
-run cave as a non-root user with the command
+This will install to `/awips2/cave` and `/awips2/alertviz` (as well as awips2 system directories like `/awips2/java` and `/awips2/python`).
+
+## Run CAVE
+
+Run cave with the command
 
     /awips2/cave/cave.sh
 
-# Mac OS X
+> AWIPS II was originally built for 32-bit Red Hat 5 (which is what the old AWIPS I system runs on).  As of 2016, 64-bit RHEL and CentOS 6 are supported, and Fedora Linux 9-12 should work as well.   **Unsupported distros** include CentOS 7, Ubuntu, Debian, and pretty much everthing else.
 
-1. Download and install the CAVE image from [http://www.unidata.ucar.edu/downloads/awips2/awips2-cave-osx.dmg](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave-osx.dmg) (356 MB)
+# AWIPS II Data in the Cloud
 
-2. Download and install the Mac OS X x64 `jdk-7u79-macosx-x64.dmg` [from Oracle.](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
-
-
-# edex-cloud.unidata.ucar.edu
-
-Unidata and Microsoft have partnered to offer a EDEX data server in the Azure cloud, open to the Unidata university community and the public.  To connect, select the server in the Connectivity Preference dropdown, or enter
- 
-    edex-cloud.unidata.ucar.edu
+Unidata and Microsoft have partnered to offer a EDEX data server in the Azure cloud, open to the Unidata university community and the public.  Select the server in the Connectivity Preferences dialog, or enter **`edex-cloud.unidata.ucar.edu`** 
 
 ![EDEX in the cloud](../images/boEbFSf28t.gif)
 

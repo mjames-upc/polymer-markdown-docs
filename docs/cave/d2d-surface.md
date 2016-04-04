@@ -10,15 +10,15 @@ subtitle: D2D User Guide
 
 Several of the data sets in the Obs menu can be interrogated (sampled) for more detailed information by clicking mouse Button 1 (B1) over a site. These data sets include METAR, Maritime, and Local. The Obs menu is subdivided into sections that contain related products. These sections are described below.
 
-## METAR
+# METAR
 
 This section contains automatically updating METAR observations, ceiling and visibility plots, wind chill and heat indices, precipitation plots at various time intervals, and quality-checked MSAS observations. The 24hr Chg METAR plot provides the difference between the observed temperature, dewpoint, pressure, and wind from those observed 24 hours earlier. The calculation of the wind difference involves vector subtraction of the "u" and "v" components.
 
-## Synoptic
+# Synoptic
 
 This section contains automatically updating Synoptic observations, and 6 hour and 24 hour precip plots. Note that this section of the menu is not present at most sites.
 
-## Maritime
+# Maritime
 
 This section contains buoy and ship report plots, plus SAFESEAS for the Marine WFOs.
 
@@ -30,7 +30,7 @@ This section contains buoy and ship report plots, plus SAFESEAS for the Marine W
 selecting **Surface** > **Other Maritime Plots** > **Scatterometer Winds**. The ASCAT Scatterometer Ocean Winds product is displayable on CAVE at all scales: N. Hemisphere, North America, CONUS, Regional, State(s), and WFO.
 	* **SAFESEAS** is the System on AWIPS for Forecasting and Evaluation of Seas and Lakes. It is a set of AWIPS applications that continuously monitor marine and adjacent overland conditions for specific marine and weather hazards. SAFESEAS helps make faster, earlier, and higher-quality decisions regarding marine watches and warnings. SAFESEAS is primarily intended to support any WFO with marine forecast responsibilities; however, non-marine WFOs also may find its monitoring capabilities to be of practical use. The SAFESEAS menu option is available under the OBs menu's Maritime section; but only available at marine WFOs; local WFOs can be reconfigured to include this option. The SAFESEAS menu has two Fog Monitoring products. These products include a Fog Monitoring Table tool and a Fog Monitor Levels color table. For more information about the Fog Monitor, refer to the Fog Monitor User's Guide. You can access the Fog Monitor from the Obs menu under the Hazards section and also through the SAFESEAS monitor threat level CAVE icon on the main menu. This guide opens in Adobe® Reader®.
 
-## Hazards
+# Hazards
 
 The Hazards section covers local and regional plots, marine warnings, local storm reports, lightning plots, and monitoring of fog and winter weather hazards.
 
@@ -50,13 +50,13 @@ present at your site.
 that were entered into the LSR text database and decoded into the correct point data format. The LSR graphical user interface (GUI) is a stand-alone AWIPS application designed to provide forecasters with an easy and quick way to create, manage, and send the LSR public text product. This text product contains noteworthy weather events for which the forecaster has either received or sought out real-time observations.
 
 
-## Surface, Metar, Synoptic, Other Station Plots
+# Surface, Metar, Synoptic, Other Station Plots
 
 ![image](../images/Rathudf.png)
 
 ![image](../images/s7YS0cg.png)
 
-## National Convective Weather Forecast (AWC)
+# National Convective Weather Forecast (AWC)
 
 The [National Convective Weather Forecast](https://www.aviationweather.gov/products/ncwf/) (NCWF) is an automatically generated depiction of current convection and extrapolated significant current convection.  It is a supplement to, but does not substitute for, the report and forecast information contained in [Convective SIGMETs](). The NCWF contains both GRIB and BUFR output. The GRIB output delineates the current convection. The BUFR output includes hazardous convection area polygons, movement arrows, and storm top and speed text information.
 
@@ -64,7 +64,7 @@ The NCWF display bunlde renders **storm tops and movement**, **previous performa
 
 ![image](../images/JwRbQMl.png)
 
-## Center Weather Advisories (CWA)
+# Center Weather Advisories (CWA)
 
 The [CWA](https://aviationweather.gov/cwamis/help) is an aviation weather warning for conditions meeting or approaching national in-flight advisory (AIRMET, SIGMET or SIGMET for convection) criteria. The CWA is primarily used by air crews to anticipate and avoid adverse weather conditions in the en route and terminal environments. It is not a flight planning product because of its short lead time and duration.
 
@@ -72,7 +72,7 @@ Shown with NEXRAD DHR composite:
 
 ![image](../images/II5BIKb.png)
 
-## MOS Products
+# MOS Products
 
 These plots are derived from the MOS BUFR Bulletins. The previous MOS plots were derived from the MOS Text Bulletins. The plots display forecast data for GFS MOS, GFS-Extended MOS, and NGM MOS. Submenus under each model reveal the element choices. These displays include:
 
@@ -87,11 +87,11 @@ These plots are derived from the MOS BUFR Bulletins. The previous MOS plots were
 ![image](../images/cpXcdBh.png)
 
 
-## Lightning
+# Lightning
 
 (only available for US-based .edu domains)
 
-#### USPN
+## USPN
 
 * 1 hour plot
 * 15 minute plot
@@ -101,16 +101,16 @@ These plots are derived from the MOS BUFR Bulletins. The previous MOS plots were
 * 1 minute lightning sequence plot
 
 
-## ASCAT Winds
+# ASCAT Winds
 
 The Advanced Scatterometer (ASCAT)  25 km windsoverlaid on top of GOES East water wapor:
 
 ![image](../images/X8MpdM4.png)
 
 
-## Maritime
+# Maritime
 
-### Maritime Plots
+## Maritime Plots
 
 * Fixed Buoys
 * Moving Maritime
@@ -122,37 +122,32 @@ The Advanced Scatterometer (ASCAT)  25 km windsoverlaid on top of GOES East wate
 * MAROB Clouds/Vis
 
 
-
-
-
-### SAFESEAS
+## SAFESEAS
 
 need to do with linux client
 
 
 * Configure SAFESEAS Monitor Area
 
-
-
 * Configure SAFESEAS Thresholds for Alertviz Monitoring
 
-## Hazards
+# Hazards
 
-### Warnings
+## Warnings
 
-### Flood Warnings
+## Flood Warnings
 
-### Marine Warnings
+## Marine Warnings
 
-### Storm Reports
+## Storm Reports
 
-### SPS
+## SPS
 
-### All Warnings
+## All Warnings
 
-### Lightning
+# Lightning
 
-#### NLDN
+## NLDN
 
 * 1 hour plot
 * 15 minute plot
@@ -161,7 +156,7 @@ need to do with linux client
 * 1 minute lightning sequence plot
 * 1 minute cloud flash sequence plot
 
-#### NLDN Grid
+## NLDN Grid
 
 Available at 1km, 3km, 5km, 8km, 20km, 40km resolution
 
@@ -178,17 +173,17 @@ Available at 1km, 3km, 5km, 8km, 20km, 40km resolution
 * 5 min total flash density
 * 5 min pulse density
 
-## Fog Monitor
+# Fog Monitor
 
-### Configure Fog Monitor Area
+## Configure Fog Monitor Area
 
-### Configure Algorithm Thresholds
+## Configure Algorithm Thresholds
 
-### Configure Visibility Thresholds for Alertviz Monitoring
+## Configure Visibility Thresholds for Alertviz Monitoring
 
 
-## SNOW
+# SNOW
 
-### Configure SNOW Monitor Area
+## Configure SNOW Monitor Area
 
-### Configure SNOW Thresholds for Alertviz Monitoring
+## Configure SNOW Thresholds for Alertviz Monitoring

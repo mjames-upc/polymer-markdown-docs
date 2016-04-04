@@ -6,19 +6,45 @@ title: NCEP/Hydro Menu
 subtitle: D2D User Guide
 ---
 
-{% include toc.html %}
-
 The NCEP/Hydro menu contains nine sections: SPC, TPC, NCO, HPC, MPC, CPC, AWC, Hydro, and Local Analyses/Statistical Guidance. Each section is further subdivided into related products, as described below. For more information on hydro products, refer to documentation prepared by the NWS' Office of Hydrology.
 
-## SPC
+# SPC
 
 Storm Prediction Center (SPC) Watches, Severe Weather Plots, SPC Convective Outlooks, and Fire Weather information. Severe Weather Plots are extracted from the STADTS and STAHRY text products and plotted to time-match the current display. The Severe Weather Plots data set in the NCEP/Hydro Menu can be interrogated (sampled) for more detailed information by clicking mouse Button 1 (B1) over a site.
 
-## TPC
+# TPC
 
 Contains the hurricane submenu, which comprises graphic products that display the Marine/Tropical Cyclone Advisory (TCM), the Public Tropical Cyclone Advisory (TCP), hourly forecasts, and model guidance.
 
-## NCO
+
+# HPC
+
+Contains 6-hour QPF (Quantitative Precipitation Forecast) data plus the submenus, described
+below, for Precipitation and Temps & Weather products.
+
+ * **Precipitation** Contains probabilities of daily precipitation, precipitation accumulation, and probabilities of daily snowfall. In addition, this submenu enables you to display QPF projections for 1 to 3 days in 6 hour increments, 4 to 5 days in 48 hour increments, and 1 to 5 days in 120 hour increments. The HPC Excessive Rainfall product consists of a contour graphic and image of the excessive rainfall for day 1 (with forecast times of 21, 24, 27, or 30 hours), and days 2 and 3 (both with forecast times of 48 and 72 hours). The HPC product will update the selected forecast cycle twice per day.
+* **Temps & Weather** Contains daily Max/Min temperature anomalies, daily heat index
+probabilities, and pressure and frontal analysis.
+
+# MPC
+
+Contains the Marine Guidance submenu, which includes marine analyses and model guidance. Note that  the Marine Prediction Center (MPC) is now called the Ocean Prediction Center (OPC).
+
+# CPC
+
+Contains threat charts and outlook grids derived from these two submenus:
+
+* **Threat Charts** Contains drought monitoring data, daily threats assessment, and daily heat index forecasts.
+* **Outlook Grids** Contains temperature and precipitation probabilities.
+
+# AWC
+
+Contains CCFP (Collaborative Convective Forecast Product), an aviation product. Formerly located under the Aviation option on the Upper Air menu, CCFP is a strategic forecast of convection to guide traffic managers in their system-wide approach to managing traffic. The forecast suite consists of 3 forecast maps with selectable lead times (4, 6, and 8 hours). The forecasts are issued by the Aviation Weather Center (AWC) between March 1 and October 30, eleven times per day.
+
+CCFP is alpha-numeric information suitable for the graphical depiction of forecast areas of significant thunderstorms. The CCFP message covers the CONUS area, and includes information on the location of thunderstorm areas, and associated information such as storm tops, coverage, confidence, and direction/speed of movement.
+
+
+# NCO
 
 Contains Precip & Stability, Temps & Weather, National Centers model, NGM MOS (NGM-based MOS system), and the following Sounding-derived plots submenus.
 
@@ -33,33 +59,7 @@ Contains Precip & Stability, Temps & Weather, National Centers model, NGM MOS (N
 	* **Cloud Layers** This option displays the amount of low, middle, and high cloud cover, each as a standard sky coverage symbol, and weather type as a weather symbol.
 
 
-## HPC
-
-Contains 6-hour QPF (Quantitative Precipitation Forecast) data plus the submenus, described
-below, for Precipitation and Temps & Weather products.
-
- * **Precipitation** Contains probabilities of daily precipitation, precipitation accumulation, and probabilities of daily snowfall. In addition, this submenu enables you to display QPF projections for 1 to 3 days in 6 hour increments, 4 to 5 days in 48 hour increments, and 1 to 5 days in 120 hour increments. The HPC Excessive Rainfall product consists of a contour graphic and image of the excessive rainfall for day 1 (with forecast times of 21, 24, 27, or 30 hours), and days 2 and 3 (both with forecast times of 48 and 72 hours). The HPC product will update the selected forecast cycle twice per day.
-* **Temps & Weather** Contains daily Max/Min temperature anomalies, daily heat index
-probabilities, and pressure and frontal analysis.
-
-## MPC
-
-Contains the Marine Guidance submenu, which includes marine analyses and model guidance. Note that  the Marine Prediction Center (MPC) is now called the Ocean Prediction Center (OPC).
-
-## CPC
-
-Contains threat charts and outlook grids derived from these two submenus:
-
-* **Threat Charts** Contains drought monitoring data, daily threats assessment, and daily heat index forecasts.
-* **Outlook Grids** Contains temperature and precipitation probabilities.
-
-## AWC
-
-Contains CCFP (Collaborative Convective Forecast Product), an aviation product. Formerly located under the Aviation option on the Upper Air menu, CCFP is a strategic forecast of convection to guide traffic managers in their system-wide approach to managing traffic. The forecast suite consists of 3 forecast maps with selectable lead times (4, 6, and 8 hours). The forecasts are issued by the Aviation Weather Center (AWC) between March 1 and October 30, eleven times per day.
-
-CCFP is alpha-numeric information suitable for the graphical depiction of forecast areas of significant thunderstorms. The CCFP message covers the CONUS area, and includes information on the location of thunderstorm areas, and associated information such as storm tops, coverage, confidence, and direction/speed of movement.
-
-## Hydro
+# Hydro
 
 Contains QPE, QPF, and RFC Flash Flood Guidance submenus. Hydro Applications, such as HydroView and MPE Editor, are loaded from the Perspectives dialog (Hydro and MPE, respectively) or from the HydroApps menu in the Hydro(View) Perspective (Hydrobase, RiverPro, XDAT, Forecast Service, River Monitor, Precip Monitor, SSHP, and Dam Catalog).
 
@@ -71,7 +71,7 @@ Contains QPE, QPF, and RFC Flash Flood Guidance submenus. Hydro Applications, su
 * **QPF**: Displays QPF, which indicate how much precipitation will occur in a particular grid. QPFs, which are issued by the RFCs, display as contours by default. However, from the pop-up menu you can convert them to image form.
 * **RFC Flash Flood Guidance**: Displays County and Zone Flash Flood Guidance (FFG) grids on any scale. The area for which the data is displayed is limited, but the site system manager may configure a larger area. In addition, 1h, 3h, and 6h mosaic RFC-generated FFG grids can be displayed for both local and other RFC locations.
 
-## Local Analyses/Statistical Guidance
+# Local Analyses/Statistical Guidance
 
 Model Output Statistical (MOS) plots derived from the MOS BUFR and Text Bulletins display forecast data for GFS MOS, GFS-Extended MOS, Eta MOS, and NGM MOS. The plots are accessed by selecting NGM or GFS-LAMP/MOS forecasts under the Local Analyses/Statistical Guidance option.
 

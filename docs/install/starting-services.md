@@ -1,9 +1,6 @@
 ---
 layout: default
-type: guide
-shortname: Docs
-title: Start services manually
-subtitle: Install & Config
+title: Start EDEX Manually
 ---
 
 All EDEX services are started and stopped with the commands `edex start` and `edex stop`, and individual services can be started in the following order
@@ -24,7 +21,8 @@ Services can be stopped in reverse order
 
 The service config files are located in `/etc/init.d/`:
 
-`ls -la /etc/init.d/ |grep -e edex -e pypies -e qpid`
+
+    ls -la /etc/init.d/ |grep -e edex -e pypies -e qpid
 
     -rwxr--r--   1 root  root     6693 Nov  7 17:53 edex_camel
     -rwxr-xr-x   1 root  root     1422 Oct 29 15:28 edex_ldm

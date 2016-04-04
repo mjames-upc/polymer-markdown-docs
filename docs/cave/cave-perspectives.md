@@ -1,20 +1,41 @@
 ---
 layout: default
-title: D2D Introduction
+title: Perspectives
 subtitle: CAVE User Guide
 ---
 
-# D2D Toolbar
+# D2D 
 
 D2D (Display 2-Dimensions) is the default AWIPS II CAVE perspective, designed to mimmic the look and feel of the legacy AWIPS I system. Frame control, map projection, image properties, and a few featured applications make up the the primary D2D toolbar.  
 
 ![image](../images/iuNDS6J.png)
+
+
+* **CONUS** is the default map display of the continental United States in a North Polar Stereographic projection. This menu allows you to select different projections.
+
+* **Clear** will remove all non-system resources (meaning data) while preserving any map overlays you have added to the view.
+
+* ![image](../images/qYgcjy2.png) is a shortcut to **Image Properties** for the top-loaded image resource in the stack.
+
+* ![image](../images/Fz5CTtf.png) freezes and un-freezes panning (movement) of the map.
+
+* **Valid time seq** is the default time-matching setting for loading data. Select this menu to switch to configurations such as Latest, No Backfill, Previous run, Prognosis loop, and more.
+
+* ![image](../images/OZKVBSL.png) controls the frame number, display, speed, etc.  You can also control the frames with the left and right keyboard keys. 
+
+* Application links to **Warngen**, **Ncdata** (NCP GEMPAK-like grids), **Nsharp**, and the **Product Browser** are also available. 
+
+
 
 # Switching Perspectives
 
 D2D is one of many available CAVE perspectives.  By selecting the **CAVE** > **Perspective** menu you can switch into the **GFE**, **Hydro**, **Localization**, **MPE**, or **National Centers Perspective** (which is available in the **Other...** submenu. Nobody seems to know why the NCP is not listed with the other perspectives, or how to make it appear with them).
 
 ![image](../images/OU6rWMD.png)
+
+
+
+ 
 
 # Resource Stack
 

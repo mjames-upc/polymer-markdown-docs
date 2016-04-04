@@ -8,15 +8,15 @@ subtitle: D2D User Guide
 
 {% include toc.html %}
 
-## NEXRAD & TDWR Station Menus
+# NEXRAD & TDWR Station Menus
 
 Individual NEXRAD station menus are accessible in **Radar** &gt; **NEXRAD Stations** and are grouped alphabetically for a condensed submenu structure.  With only the NEXRAD3 feedtype (NEXAD2 being disabled), notice that only some of the menu items will out with available data.
 
 ![image](../images/rnJIkyR.png)
 
 
-### Best Res Z+SRM8
-### Best Res Z+V
+# Best Res Z+SRM8
+# Best Res Z+V
 
 The radar combination products Z+SRM and Z+V are precombined formats of the reflectivity and storm relative motion or velocity, displayed together via a single menu selection. SRM products include the storm motion vector information, which is plotted in the upper left corner of the Main Display Pane.
 
@@ -24,10 +24,10 @@ The radar combination products Z+SRM and Z+V are precombined formats of the refl
 
 ![image](../images/dr2pzX3.png)
 
-### 4-panel Z+SRM, ZDR+V, KDP+HC, CC+SW
+# 4-panel Z+SRM, ZDR+V, KDP+HC, CC+SW
 
 
-### 4-panel Z, ZDR, HC+KDP, CC
+# 4-panel Z, ZDR, HC+KDP, CC
 
 This section enables you to load multiple base and dual-pol products, which are then simultaneously displayed. The label of this section of the menu describes the format for loading the products: Z+SRM in the upper left quadrant, ZDR+V in the upper right quadrant, KDP+HC in the lower left quadrant, and CC+SW in the lower right quadrant. Primary dual-pol base data analysis is best accomplished using the **All Tilts base data** option (4 panel all tilts with 8 products loaded), though you may use the single tilts (e.g., 0.5 base data) for longer time duration loops.
 
@@ -43,7 +43,7 @@ After loading an All Tilts display, **Shift + LEFT ARROW** and **Shift + RIGHT A
 
 If you hit the up or down arrow key in a standard (not All-Tilts) display, looping and stepping are disabled until you hit either the left or right arrow key or one of the stepping buttons on the menu. Once an arrow key (Left, Right, Up, Down) has been pressed, the stepping/animation controls on the main window toolbar and the **Page Up/Page Down** keys will function in that same mode. For example, assume the **UP ARROW** or **DOWN ARROW** key is pressed; the menu controls will now operate through the tilts at a fixed time, e.g., you can go to the lowest tilt by selecting the First Frame iconified button.
 
-### Best Res Base Products
+# Best Res Base Products
 
 This section is divided into two parts. The upper part lists individual products: four base products and three dual-pol products (ZDR, CC, and KDP). The lower part includes submenus for accessing multiple products and applications. The following describes the submenus grouped in the lower part of the Best Res Base Products section.
 
@@ -60,53 +60,53 @@ This section is divided into two parts. The upper part lists individual products
 
 
 
-## MRMS
+# MRMS
 
 
 
 
-## FNEXRAD Composites
+# FNEXRAD Composites
 
-### DHR
+## DHR
 
-### DLV
+## DLV
 
-### EET
+## EET
 
-### HHC
+## HHC
 
-### N1P
+## N1P
 
-### NTP
+## NTP
 
-## Mosaic
+# Mosaic
 
 Mosaics available via this menu use data from up to nine nearby radars. Additional optional
 mosaics on cascading menus provide a limited list of radar products from a predefined set of WSR-88D radars within a given region. Your System Manager or site Administrator can set up such mosaics by: `/awips2/edex/data/utility/common_static/site//radar/radarInUse.txt`. A mosaicInfo.txt table will only work while logged on to an AWIPS workstation.
 
-### N0Q
+## N0Q
 
-### DSP
+## DSP
 
-### DTA
+## DTA
 
-### DAA
+## DAA
 
-## Applications
+# Applications
 
-### Estimated Actual Velocity (EAV)
+## Estimated Actual Velocity (EAV)
 
 A velocity (V) display from the radar shows only the radial component of the wind, so the indicated
 speed depends on the direction of the wind and the azimuth (direction) from the radar. Consider, for example, a north wind. Straight north of the radar, the full speed of the wind will be seen on the V product. As one moves around to the east of the radar, the radial component gets smaller, eventually reaching zero straight east of the radar. If the wind direction is known, then the actual wind speed can be computed by dividing the observed radial speed by the cosine of the angle between the radar radial and the actual direction. The EAV tool allows you to provide that angle and use the sampling function of the display to show the actual wind speed.
 
 ![image](../images/qLuJnK2aVF.gif)
 
-### Four-dimensional Stormcell Investigator (FSI)
+## Four-dimensional Stormcell Investigator (FSI)
 
 The [Four-dimensional Stormcell Investigator (FSI)](http://www.nws.noaa.gov/mdl/fsi/) was developed by the National Severe Storms Laboratory for its Warning Decision Support System Integrated Information.  This technology allows users to create and manipulate dynamic cross-sections (both vertical and at constant altitude), such that one can “slice and dice” storms and view these data in three-dimensions and across time.
 
 
-### V-R Shear
+## V-R Shear
 
 This tool is used in conjunction with Doppler velocity data to calculate the velocity difference (or "shear") of the data directly under the end points. As with the Baselines, this feature comes up editable and the end points can be dragged to specific gates of velocity data. When in place, the speed difference (kts), distance between end points (nautical miles), shear (s-1), and distance from radar (Nmi) are automatically plotted next to the end points and in the upper left corner of the Main Display Pane. A positive shear value indicates cyclonic shear, while a negative value indicates anticyclonic shear. If either end point is not directly over velocity data, the phrase "no data" is reported for the shear value. This tool is also useful in determining gate-to-gate shear. Simply place the two end points directly over adjacent gates of velocity data.
 

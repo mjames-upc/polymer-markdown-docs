@@ -1,29 +1,17 @@
 ---
 layout: default
-type: guide
-shortname: Docs
-title: Run EDEX
-subtitle: Install & Config
+title: The EDEX Service Manager
 ---
 
-{% include toc.html %}
+# The EDEX Service Manager
 
-By default, EDEX services (including postgres, httpd-pypies, and qpidd) will run at boot, as defined in the header of each service file (e.g. `/etc/init.d/edex_camel`)
- 
-    #!/bin/bash
-    # edex_camel  This shell script takes care of starting...
-    # chkconfig: 35 99 10
+The four EDEX services (**postgres**, **httpd-pypies**, **qpidd**, and **edex_camel**) will run at boot once they are installed, as defined in the header of each file by the same name in `/etc/init.d`.  The LDM does not start automatically on boot.
 
-The `chkconfig: 35 99 10` defintion defines runlevels 3 and 5, started at priority 99 (last), stopped at priority 10 (one of the first).  Each EDEX file in `/etc/init.d` has runlevel and priority definitions.  Furthermore, when the `edex setup` command is run during install, `chkconfig` is run for each core EDEX service (not including the LDM): 
+# edex status
 
-    chkconfig edex_postgres on --level 35
-    chkconfig httpd-pypies on --level 35
-    chkconfig qpidd on --level 35
-    chkconfig edex_camel on --level 35
+Type `edex status` (or simply `edex`) to list the EDEX processes and their statuses.  
 
-The EDEX administrator should be aware that these services are running on boot by default, but the LDM is not (for now).
-
-## `edex status`
+    edex
     
     [edex status]
      postgres    :: not running
@@ -34,11 +22,14 @@ The EDEX administrator should be aware that these services are running on boot b
      EDEXrequest :: not running
      ldmadmin    :: not running
 
-
      edex (status|start|stop|setup|log|purge|users)
 
-## `edex start`
+The last line are the other available commands ([edex start](#edex-start), [edex stop](#edex-stop), [edex setup](#edex-setup), [edex log](#edex-log), [edex purge](#edex-purge), [edex users](#edex-users)).
 
+# edex start
+
+    edex start
+    
     Starting EDEX PostgreSQL: 
     Starting logging service:                                  [  OK  ]
     Starting httpd: nohup: redirecting stderr to stdout       [  OK  ]
@@ -62,7 +53,9 @@ The EDEX administrator should be aware that these services are running on boot b
     Checking LDM configuration-file (/awips2/ldm/etc/ldmd.conf)...
     Starting the LDM server...
 
-## `edex stop`
+# edex stop
+
+    edex stop
 
     Stopping EDEX Camel (request): 
     Stopping EDEX Camel (ingest): 
@@ -79,13 +72,11 @@ The EDEX administrator should be aware that these services are running on boot b
     Stopping AWIPS II LDM:Stopping the LDM server...
     Waiting for the LDM server to terminate...
 
-
-# Other Options
-
-## `edex setup` 
+# edex setup
 to configure (or confirm) that the EDEX hostname and IP address definitions exist.  If these definitions are missing, `edex start` will run `edex setup` for you.
 
     edex setup
+    
     [edex] EDEX IP and Hostname Setup
      Checking /awips2/data/pg_hba.conf [OK]
      Checking /awips2/edex/bin/setup.env [OK]
@@ -94,10 +85,11 @@ to configure (or confirm) that the EDEX hostname and IP address definitions exis
     [done]
 
 
-## `edex log` 
+# edex log
 to view the Ingest JVM log (default) and others such as `edex log grib`, `edex log request`, `edex log ldm`.
 
     edex log
+    
     [edex] EDEX Log Viewer
 
      :: No log specified - Defaulting to ingest log
@@ -107,8 +99,8 @@ to view the Ingest JVM log (default) and others such as `edex log grib`, `edex l
     Time spent in persist: 68
     INFO  2015-12-09 18:34:45,951 [Ingest.obs-1] Ingest: EDEX: Ingest - obs:: /awips2/data_store/metar/20151209/18/SAIN31_VABB_091830_131392869.2015120918 processed in: 0.0810 (sec) Latency: 0.1800 (sec)
 
-## `edex users` 
+# edex users
 to view user information for your EDEX server (account username and domain name are recorded by each edex server for localization purposes).
 
-## `edex purge` 
+# edex purge
 to view any stuck purge jobs in PortgreSQL (a rare but serious problem if your disk fills up).  The solution to this is to run `edex purge reset`.
