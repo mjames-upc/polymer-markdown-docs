@@ -1,25 +1,24 @@
 Polymer Documentation Theme 
 ===========================
 
-This is a boilerplate documentation framework for Github Pages
-using Markdown. This project is based on 
-[Polymer/docs](https://github.com/Polymer/docs).
+This is a boilerplate documentation framework for Github Pages using Markdown.
 
-[Jekyll][https://jekyllrb.com] and [Grunt](https://gruntjs.com) 
-are used to generate static HTML in a folder called `_site`. SASS 
-is converted to CSS. The `_site` folder can be served locally for
-development, and can be pushed to Github Pages.
+This project is based on [Polymer/docs](https://github.com/Polymer/docs) and uses
+[Jekyll](https://jekyllrb.com) and [Grunt](https://gruntjs.com) to generate static
+HTML in a folder called `_site`. The `_site` folder can be served locally for 
+development, and is ddesgined for easy publication to Github Pages.
 
-See the **demo** at [https://mjames-upc.github.io/polymer-docs/](https://mjames-upc.github.io/polymer-docs/).
+[See the demo](https://mjames-upc.github.io/polymer-docs/).
 
-##  Install npm
+# Installation
+
+##  Install [npm](https://www.npmjs.com)
+
+npm is a JavaScript dependency manager and is bundled with [Node.js](http://nodejs.org/download).
 
     http://nodejs.org/download
 
-npm is a JavaScript dependency manager. It is bundled with Node.js 
-by default.
-
-##  Install Bundler
+##  Install [Bundler](http://bundler.io)
 
     gem install bundler jekyll --user-install
 
@@ -35,17 +34,20 @@ path, add it now by adding the following to your `.bashrc` file
 
 ## Install Grunt, Vulcanize, and Bower
 
+To install these tools globally, add a `-g` flag after `npm install`.
+
     npm install grunt-cli vulcanize bower compass
     npm install grunt --save-dev
 
-**Grunt** automates repetitive tasks, like minifying 
-JavaScript, compiling SASS, and deploying the website.
+**Grunt** automates tasks like minifying 
+JavaScript, compiling SASS, and deploying the website with Jekyll.
 
 **Vulcanize** (built by the Polymer team) reduces HTML files and their 
-dependent HTML imports into one file. Bower is another tool for
+dependent HTML imports into one file. 
+
+**Bower** is a tool for
 managing JavaScript dependencies.
 
-To install these tools globally, add a `-g` flag after `npm install`.
 
 ## Build
 
