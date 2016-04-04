@@ -10,6 +10,8 @@ are used to generate static HTML in a folder called `_site`. SASS
 is converted to CSS. The `_site` folder can be served locally for
 development, and can be pushed to Github Pages.
 
+See the **demo** at [https://mjames-upc.github.io/polymer-docs/](https://mjames-upc.github.io/polymer-docs/).
+
 ##  Install npm
 
     http://nodejs.org/download
