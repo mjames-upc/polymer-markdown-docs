@@ -1,105 +1,75 @@
 ---
 layout: default
-type: about
-title: Unidata AWIPS II
-subtitle: About
-shortname: Introducing
+title: Installation
 ---
 
-<style>
-  .benchmark img {
-    max-width: 500px;
-  }
-  .benchmark figcaption {
-    font-weight: bold;
-    margin-bottom: 16px;
-  }
-</style>
+This is a boilerplate documentation framework and theme for Github Pages using Markdown.
 
-AWIPS II is a weather forecasting display and analysis package being developed by the National Weather Service and Raytheon. AWIPS II is a Java application consisting of a data-rendering client (CAVE, which runs on Red Hat/CentOS Linux and Mac OS X) and a backend data server (EDEX, which runs only on Linux)
+This project is based on [Polymer/docs](https://github.com/Polymer/docs) and uses [Jekyll](https://jekyllrb.com) and [Grunt](https://gruntjs.com) to generate static HTML in a folder called `_site`. The `_site` folder can be served locally for  development, and is desgined for easy publication to Github Pages.
 
-AWIPS II takes a unified approach to data ingest, and most data types follow a standard path through the system. At a high level, data flow describes the path taken by a piece of data from its source to its display by a client system. This path starts with data requested and stored by an [LDM](#ldm) client and includes the decoding of the data and storing of decoded data in a form readable and displayable by the end user.
+# Installation
 
-The AWIPS II ingest and request processes are a highly distributed system, and the messaging broken [Qpid](#qpid) is used for inter-process communication. 
+##  Install [npm](https://www.npmjs.com)
 
-![image](http://www.unidata.ucar.edu/software/awips2/images/awips2_coms.png)
+npm is a JavaScript dependency manager and is bundled with Node.js, available at [http://nodejs.org](http://nodejs.org).
 
-[ldm]: http://www.unidata.ucar.edu/software/ldm/
-[idd]: http://www.unidata.ucar.edu/projects/#idd
-[gempak]: http://www.unidata.ucar.edu/software/gempak/
-[awips2]: http://www.unidata.ucar.edu/software/awips2/
-[ncep]: http://www.ncep.noaa.gov
-[apache]: http://httpd.apache.org
-[postgres]: www.postgresql.org
-[hdf5]: http://www.hdfgroup.org/HDF5/
-[eclipse]: http://www.eclipse.org
-[camel]: http://camel.apache.org/ 
-[spring]: http://www.springsource.org/ 
-[hibernate]: http://www.hibernate.org/ 
-[qpid]: http://qpid.apache.org 
+##  Install [Bundler](http://bundler.io)
 
+    gem install bundler jekyll --user-install
 
-## Software Components
+The `--user-install` flag will install the gem to your home directory (usually `~/.gem/ruby/2.2.0`).
 
-* [EDEX](#edex)
-* [CAVE](#cave)
-* [Alertviz](#alertviz)
-* [LDM](#ldm)
-* [edexBridge](#edexbridge)
-* [Qpid](#qpid)
-* [PostgreSQL](#postgresql)
-* [HDF5](#hdf5)
-* [PyPIES](#pypies)
+If Ruby warns you that the user install directory is not on your
+path, add it now by adding the following to your `.bashrc` file
+(or whatever is appropriate for your development environment):
+
+    PATH="$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
+
+## Install [Grunt](https://gruntjs.com), [Vulcanize](https://github.com/Polymer/vulcanize), and [Bower](http://bower.io)
+
+To install these tools globally, add a `-g` flag after `npm install`.
+
+    npm install grunt-cli vulcanize bower compass
+    npm install grunt --save-dev
+
+**[Grunt](https://gruntjs.com)** automates tasks like minifying JavaScript, compiling SASS, and deploying the website with Jekyll.
+
+**[Vulcanize](https://github.com/Polymer/vulcanize)** (built by the Polymer team) reduces HTML files and their dependent HTML imports into one file. 
+
+**[Bower](http://bower.io)** is a tool for managing JavaScript dependencies.
 
 
-The primary AWIPS II application for data ingest, processing, and storage is the Environmental Data EXchange (**EDEX**) server; the primary AWIPS II application for visualization/data manipulation is the Common AWIPS Visualization Environment (**CAVE**) client, which is typically installed on a workstation separate from other AWIPS II components.  
+# Build
 
-In addition to programs developed specifically for AWIPS, AWIPS II uses several commercial off-the-shelf (COTS) and Free or Open Source software (FOSS) products to assist in its operation. The following components, working together and communicating, compose the entire AWIPS II system.
+Clone this repository. For sake of example, we'll assume you clone 
+it to `~/polymer-docs`.
 
-### EDEX
+    git clone https://github.com/mjames-upc/polymer-docs.git
+    cd polymer-docs
 
-The main server for AWIPS II.  Qpid sends alerts to EDEX when data stored by the LDM is ready for processing.  These Qpid messages include file header information which allows EDEX to determine the appropriate data decoder to use.  The default ingest server (simply named ingest) handles all data ingest other than grib messages, which are processed by a separate ingestGrib server.  After decoding, EDEX writes metadata to the database via Postgres and saves the processed data in HDF5 via PyPIES.   A third EDEX server, request, feeds requested data to CAVE clients. EDEX ingest and request servers are started and stopped with the commands `edex start` and `edex stop`, which runs the system script `/etc/rc.d/init.d/edex_camel`
+    bundle install
+    npm install
+    bower install
 
-### CAVE
+    grunt docs
 
-Common AWIPS Visualization Environment. The data rendering and visualization tool for AWIPS II. CAVE contains of a number of different data display configurations called perspectives.  Perspectives used in operational forecasting environments include **D2D** (Display Two-Dimensional), **GFE** (Graphical Forecast Editor), and **NCP** (National Centers Perspective). CAVE is started with the command `/awips2/cave/cave.sh` or `cave.sh`
+## Deploy Locally
 
-![CAVE](http://www.unidata.ucar.edu/software/awips2/images/Unidata_AWIPS2_CAVE.png)
+    grunt
+    
+and point a browser to 
 
-### Alertviz
+    http://127.0.0.1:4000/polymer-docs/
 
-**Alertviz** is a modernized version of an AWIPS I application, designed to present various notifications, error messages, and alarms to the user (forecaster). AlertViz can be executed either independently or from CAVE itself.  In the Unidata CAVE client, Alertviz is run within CAVE and is not required to be run separately.  The toolbar is also **hidden from view** and is accessed by right-click on the desktop taskbar icon.
+## Publish on Github Pages
 
-### LDM
+The command `grunt gh-pages` will download your remote repo hosted on Github, so all commits should be pushed before publishing.
 
-[http://www.unidata.ucar.edu/software/ldm/](http://www.unidata.ucar.edu/software/ldm/)
+Run `./deploy.sh` and a new `_site` directory is created and trimmed of fat. You can manually copy the contents of this directory to another repo `gh-pages` branch and push to Github, just be certain that names defined in `_config.yml` are correct.
 
-The **LDM** (Local Data Manager), developed and supported by Unidata, is a suite of client and server programs designed for data distribution, and is the fundamental component comprising the Unidata Internet Data Distribution (IDD) system. In AWIPS II, the LDM provides data feeds for grids, surface observations, upper-air profiles, satellite and radar imagery and various other meteorological datasets.   The LDM writes data directly to file and alerts EDEX via Qpid when a file is available for processing.  The LDM is started and stopped with the commands `edex start` and `edex stop`, which runs the commands `service edex_ldm start` and `service edex_ldm stop`
+**Note**: only project owners can publish the documentation.
 
-### edexBridge
+    grunt gh-pages
 
-edexBridge, invoked in the LDM configuration file `/awips2/ldm/etc/ldmd.conf`, is used by the LDM to post "data available" messaged to Qpid, which alerts the EDEX Ingest server that a file is ready for processing.
 
-### Qpid
-
-[http://qpid.apache.org](http://qpid.apache.org)
-
-**Apache Qpid**, the Queue Processor Interface Daemon, is the messaging system used by AWIPS II to facilitate communication between services.  When the LDM receives a data file to be processed, it employs **edexBridge** to send EDEX ingest servers a message via Qpid.  When EDEX has finished decoding the file, it sends CAVE a message via Qpid that data are available for display or further processing. Qpid is started and stopped by `edex start` and `edex stop`, and is controlled by the system script `/etc/rc.d/init.d/qpidd`
-
-### PostgreSQL
-[http://www.postgresql.org](http://www.postgresql.org)
-
-**PostgreSQL**, known simply as Postgres, is a relational database management system (DBMS) which handles the storage and retrieval of metadata, database tables and some decoded data.  The storage and reading of EDEX metadata is handled by the Postgres DBMS.  Users may query the metadata tables by using the termainal-based front-end for Postgres called **psql**. Postgres is started and stopped by `edex start` and `edex stop`, and is controlled by the system script `/etc/rc.d/init.d/edex_postgres`
-
-### HDF5
-
-[http://www.hdfgroup.org/HDF5/](http://www.hdfgroup.org/HDF5/)
-
-[**Hierarchical Data Format (v.5)**][hdf5] is the primary data storage format used by AWIPS II for processed grids, satellite and radar imagery and other products.   Similar to netCDF, developed and supported by Unidata, HDF5 supports multiple types of data within a single file.  For example, a single HDF5 file of radar data may contain multiple volume scans of base reflectivity and base velocity as well as derived products such as composite reflectivity.  The file may also contain data from multiple radars. HDF5 is stored in `/awips2/edex/data/hdf5/`
-
-### PyPIES (httpd-pypies)
-
-**PyPIES**, Python Process Isolated Enhanced Storage, was created for AWIPS II to isolate the management of HDF5 Processed Data Storage from the EDEX processes.  PyPIES manages access, i.e., reads and writes, of data in the HDF5 files.  In a sense, PyPIES provides functionality similar to a DBMS (i.e PostgreSQL for metadata); all data being written to an HDF5 file is sent to PyPIES, and requests for data stored in HDF5 are processed by PyPIES.
-
-PyPIES is implemented in two parts: 1. The PyPIES manager is a Python application that runs as part of an Apache HTTP server, and handles requests to store and retrieve data. 2. The PyPIES logger is a Python process that coordinates logging. PyPIES is started and stopped by `edex start` and `edex stop`, and is controlled by the system script `/etc/rc.d/init.d/https-pypies` 
 
