@@ -11,6 +11,9 @@ title: docs-menu
       <core-item label="Installation" icon="info">
         <a href="{{ baseurl }}/"></a>
       </core-item>
+      <core-item label="Config" icon="settings">
+        <a href="{{ baseurl }}/docs/config.html"></a>
+      </core-item>
       <core-item label="Pages" icon="description">
         <a href="{{ baseurl }}/docs/pages.html"></a>
       </core-item>
