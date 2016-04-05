@@ -65,7 +65,7 @@ and point a browser to
 
 The command `grunt gh-pages` will download your remote repo hosted on Github, so all commits should be pushed before publishing.
 
-Run [`./deploy.sh`](https://github.com/mjames-upc/polymer-docs/blob/master/deploy.sh) and a new `_site` directory is created and trimmed of fat. You can manually copy the contents of this directory to another repo [`gh-pages`](https://github.com/mjames-upc/polymer-docs/tree/gh-pages) branch and push to Github, just be certain that names defined in [`_config.yml`](config.html) are correct.
+Run [`./deploy.sh`](https://github.com/mjames-upc/polymer-docs/blob/master/deploy.sh) and a new `_site` directory is created and trimmed of fat. You can manually copy the contents of this directory to another repo [`gh-pages`](https://github.com/mjames-upc/polymer-docs/tree/gh-pages) branch and push to Github, just be certain that names defined in [`_config.yml`](https://github.com/mjames-upc/polymer-docs/blob/master/_config.yml) are correct.
 
 **Note**: only project owners can publish the documentation.
 
