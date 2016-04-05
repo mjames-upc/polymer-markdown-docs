@@ -53,7 +53,7 @@ it to `~/polymer-docs`.
 
     grunt docs
 
-## Deploy Locally
+# Deploy Locally
 
     grunt
     
@@ -61,15 +61,12 @@ and point a browser to
 
     http://127.0.0.1:4000/polymer-docs/
 
-## Publish on Github Pages
-
-The command `grunt gh-pages` will download your remote repo hosted on Github, so all commits should be pushed before publishing.
-
-Run [`./deploy.sh`](https://github.com/mjames-upc/polymer-docs/blob/master/deploy.sh) and a new `_site` directory is created and trimmed of fat. You can manually copy the contents of this directory to another repo [`gh-pages`](https://github.com/mjames-upc/polymer-docs/tree/gh-pages) branch and push to Github, just be certain that names defined in [`_config.yml`](https://github.com/mjames-upc/polymer-docs/blob/master/_config.yml) are correct.
-
-**Note**: only project owners can publish the documentation.
+# Publish on Github Pages
 
     grunt gh-pages
 
+**Note**: only project owners can publish the documentation.
 
+The command `grunt gh-pages` will download your remote repo to a temporary directory, checkout the gh-pages branch (or create one if it doesn't exist), copy the contents of `_site`, and then push back to github (`git push origin gh-pages`). 
 
+Run [`./deploy.sh`](https://github.com/mjames-upc/polymer-docs/blob/master/deploy.sh) and a new `_site` directory is created and trimmed of fat. You can manually copy the contents of this directory to another repo [`gh-pages`](https://github.com/mjames-upc/polymer-docs/tree/gh-pages) branch and push to Github, just be certain that names defined in [`_config.yml`](https://github.com/mjames-upc/polymer-docs/blob/master/_config.yml) are correct.

@@ -14,7 +14,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
     'gh-pages': {
       options: {
-        base: '_site'
+        base: '_site',
+        message: 'Auto-generated commit'
       },
       src: ['**']
     },
