@@ -3,23 +3,23 @@ layout: default
 title: Installation
 ---
 
-Polymer Docs is a boilerplate documentation framework and theme for Github Pages which converts Markdown to [Polymer library Web Components](https://www.polymer-project.org/1.0/) pages. This project is based on [Polymer/docs](https://github.com/Polymer/docs) and uses [Jekyll](https://jekyllrb.com) and [Grunt](https://gruntjs.com), among other libraries. 
+Polymer Docs is a boilerplate documentation framework and theme for Github Pages which converts Markdown to [Polymer library Web Component](https://www.polymer-project.org/1.0/) pages. This project is based on [Polymer/docs](https://github.com/Polymer/docs) and uses [Jekyll](https://jekyllrb.com) and [Grunt](https://gruntjs.com), among other libraries. 
 
 # Install
+
+Fork [https://github.com/mjames-upc/polymer-docs](https://github.com/mjames-upc/polymer-docs) on Github, and then clone to your local machine:
+
+    git clone https://github.com/<username>/polymer-docs.git
 
     gem install bundler jekyll --user-install
     npm install grunt-cli vulcanize bower compass
     npm install grunt --save-dev
 
-To install globally run `npm install -g ...`.
+> To install these globally run `npm install -g ...`
 
-The `--user-install` flag will install the gem to your home directory (usually `~/.gem/ruby/2.2.0`).*
+> The `--user-install` flag will install the gem to your home directory (usually `~/.gem/ruby/2.2.0`)
 
-## **Fork** [https://github.com/mjames-upc/polymer-docs](https://github.com/mjames-upc/polymer-docs) on Github
 
-and then clone your fork:
-
-    git clone https://github.com/&lt;username&gt;/polymer-docs.git
     cd polymer-docs
 
     bundle install
@@ -27,11 +27,8 @@ and then clone your fork:
     bower install
 
     grunt docs
-
-# Deploy Locally
-
     grunt
-    
+
 and open [http://127.0.0.1:4000/polymer-docs/](http://127.0.0.1:4000/polymer-docs/)
 
 # Publish on Github Pages
@@ -55,9 +52,8 @@ Run [`./deploy.sh`](https://github.com/mjames-upc/polymer-docs/blob/master/deplo
 - **[Bower](http://bower.io)** is a tool for managing JavaScript dependencies.
 
 
-* If Ruby warns you that the user install directory is not on your
+> If Ruby warns you that the user install directory is not on your
 path, add it now by adding the following to your `.bashrc` file
 (or whatever is appropriate for your development environment):
-
-    PATH="$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
+>`PATH="$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin"`
 
