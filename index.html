@@ -16,12 +16,12 @@
 </title>
 <link rel="shortcut icon" href="/polymer-docs/images/favicon.png">
 <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
-<link href="/polymer-docs/css/site2.css?20160405" rel="stylesheet">
-<link href="/polymer-docs/css/site2_sd_rules.css?20160405" rel="stylesheet" shim-shadowdom>
-<script src="/polymer-docs/components/webcomponentsjs/webcomponents.min.js?20160405"></script>
+<link href="/polymer-docs/css/site2.css?20160718" rel="stylesheet">
+<link href="/polymer-docs/css/site2_sd_rules.css?20160718" rel="stylesheet" shim-shadowdom>
+<script src="/polymer-docs/components/webcomponentsjs/webcomponents.min.js?20160718"></script>
 <link rel="import" href="/polymer-docs/components/polymer/polymer.html">
 <link rel="stylesheet" href="/polymer-docs/css/elements/docs-menu.css">
-<link rel="import" href="/polymer-docs/elements/common_elements.vulcanized.html?20160405">
+<link rel="import" href="/polymer-docs/elements/common_elements.vulcanized.html?20160718">
 
 
 </head>
@@ -63,50 +63,24 @@
         </h1>
       </header>
 
-      <p>This is a boilerplate documentation framework and theme for Github Pages using Markdown.</p>
+      <p>Polymer Docs is a boilerplate documentation framework and theme for Github Pages which converts Markdown to <a href="https://www.polymer-project.org/1.0/">Polymer library Web Components</a> pages. This project is based on <a href="https://github.com/Polymer/docs">Polymer/docs</a> and uses <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://gruntjs.com">Grunt</a>, among other libraries.</p>
 
-<p>This project is based on <a href="https://github.com/Polymer/docs">Polymer/docs</a> and uses <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://gruntjs.com">Grunt</a> to generate static HTML in a folder called <code>_site</code>. The <code>_site</code> folder can be served locally for  development, and is desgined for easy publication to Github Pages.</p>
-
-<h1 id="installation">Installation</h1>
-
-<h2 id="install-npmhttpswwwnpmjscom">Install <a href="https://www.npmjs.com">npm</a></h2>
-
-<p>npm is a JavaScript dependency manager and is bundled with Node.js, available at <a href="http://nodejs.org">http://nodejs.org</a>.</p>
-
-<h2 id="install-bundlerhttpbundlerio">Install <a href="http://bundler.io">Bundler</a></h2>
+<h1 id="install">Install</h1>
 
 <pre><code>gem install bundler jekyll --user-install
-</code></pre>
-
-<p>The <code>--user-install</code> flag will install the gem to your home directory (usually <code>~/.gem/ruby/2.2.0</code>).</p>
-
-<p>If Ruby warns you that the user install directory is not on your
-path, add it now by adding the following to your <code>.bashrc</code> file
-(or whatever is appropriate for your development environment):</p>
-
-<pre><code>PATH="$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
-</code></pre>
-
-<h2 id="install-grunthttpsgruntjscom-vulcanizehttpsgithubcompolymervulcanize-and-bowerhttpbowerio">Install <a href="https://gruntjs.com">Grunt</a>, <a href="https://github.com/Polymer/vulcanize">Vulcanize</a>, and <a href="http://bower.io">Bower</a></h2>
-
-<p>To install these tools globally, add a <code>-g</code> flag after <code>npm install</code>.</p>
-
-<pre><code>npm install grunt-cli vulcanize bower compass
+npm install grunt-cli vulcanize bower compass
 npm install grunt --save-dev
 </code></pre>
 
-<p><strong><a href="https://gruntjs.com">Grunt</a></strong> automates tasks like minifying JavaScript, compiling SASS, and deploying the website with Jekyll.</p>
+<p>To install globally run <code>npm install -g ...</code>.</p>
 
-<p><strong><a href="https://github.com/Polymer/vulcanize">Vulcanize</a></strong> (built by the Polymer team) reduces HTML files and their dependent HTML imports into one file.</p>
+<p>The <code>--user-install</code> flag will install the gem to your home directory (usually <code>~/.gem/ruby/2.2.0</code>).*</p>
 
-<p><strong><a href="http://bower.io">Bower</a></strong> is a tool for managing JavaScript dependencies.</p>
+<h2 id="fork-httpsgithubcommjames-upcpolymer-docshttpsgithubcommjames-upcpolymer-docs-on-github"><strong>Fork</strong> <a href="https://github.com/mjames-upc/polymer-docs">https://github.com/mjames-upc/polymer-docs</a> on Github</h2>
 
-<h1 id="build">Build</h1>
+<p>and then clone your fork:</p>
 
-<p>Clone this repository. For sake of example, we’ll assume you clone 
-it to <code>~/polymer-docs</code>.</p>
-
-<pre><code>git clone https://github.com/mjames-upc/polymer-docs.git
+<pre><code>git clone https://github.com/&amp;lt;username&amp;gt;/polymer-docs.git
 cd polymer-docs
 
 bundle install
@@ -121,21 +95,42 @@ grunt docs
 <pre><code>grunt
 </code></pre>
 
-<p>and point a browser to</p>
-
-<pre><code>http://127.0.0.1:4000/polymer-docs/
-</code></pre>
+<p>and open <a href="http://127.0.0.1:4000/polymer-docs/">http://127.0.0.1:4000/polymer-docs/</a></p>
 
 <h1 id="publish-on-github-pages">Publish on Github Pages</h1>
 
-<pre><code>grunt gh-pages
+<p>Push any commits to your remote (you must have your own repo pushed to github if you didn’t fork it there already).</p>
+
+<pre><code>git push origin master
+
+grunt gh-pages
 </code></pre>
 
-<p><strong>Note</strong>: only project owners can publish the documentation.</p>
+<p>and go to <a href="https://mjames-upc.github.io/polymer-docs/">https://&lt;username&gt;.github.io/polymer-docs/</a></p>
 
 <p>The command <code>grunt gh-pages</code> will download your remote repo to a temporary directory, checkout the gh-pages branch (or create one if it doesn’t exist), copy the contents of <code>_site</code>, and then push back to github (<code>git push origin gh-pages</code>).</p>
 
 <p>Run <a href="https://github.com/mjames-upc/polymer-docs/blob/master/deploy.sh"><code>./deploy.sh</code></a> and a new <code>_site</code> directory is created and trimmed of fat. You can manually copy the contents of this directory to another repo <a href="https://github.com/mjames-upc/polymer-docs/tree/gh-pages"><code>gh-pages</code></a> branch and push to Github, just be certain that names defined in <a href="https://github.com/mjames-upc/polymer-docs/blob/master/_config.yml"><code>_config.yml</code></a> are correct.</p>
+
+<ul>
+  <li>
+    <p><strong><a href="https://gruntjs.com">Grunt</a></strong> automates tasks like minifying JavaScript, compiling SASS, and deploying the website with Jekyll.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://github.com/Polymer/vulcanize">Vulcanize</a></strong> (built by the Polymer team) reduces HTML files and their dependent HTML imports into one file.</p>
+  </li>
+  <li>
+    <p><strong><a href="http://bower.io">Bower</a></strong> is a tool for managing JavaScript dependencies.</p>
+  </li>
+  <li>
+    <p>If Ruby warns you that the user install directory is not on your
+path, add it now by adding the following to your <code>.bashrc</code> file
+(or whatever is appropriate for your development environment):</p>
+
+    <p>PATH=”$PATH:$(ruby -rubygems -e ‘puts Gem.user_dir’)/bin”</p>
+  </li>
+</ul>
+
 
     </article>
 
@@ -158,7 +153,7 @@ grunt docs
 <script src="/polymer-docs/js/prettify/prettify.js"></script>
 
 <!-- <script src="/polymer-docs/js/bower_components/smoothscroll/smoothscroll.js"></script> -->
-<script src="/polymer-docs/js/app.js?20160405"></script>
+<script src="/polymer-docs/js/app.js?20160718"></script>
 
 
   </scroll-area>
