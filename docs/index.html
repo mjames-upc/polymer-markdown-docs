@@ -63,36 +63,35 @@
         </h1>
       </header>
 
-      <p>Polymer Docs is a boilerplate documentation framework and theme for Github Pages which converts Markdown to <a href="https://www.polymer-project.org/1.0/">Polymer library Web Components</a> pages. This project is based on <a href="https://github.com/Polymer/docs">Polymer/docs</a> and uses <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://gruntjs.com">Grunt</a>, among other libraries.</p>
+      <p>Polymer Docs is a boilerplate documentation framework and theme for Github Pages which converts Markdown to <a href="https://www.polymer-project.org/1.0/">Polymer library Web Component</a> pages. This project is based on <a href="https://github.com/Polymer/docs">Polymer/docs</a> and uses <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://gruntjs.com">Grunt</a>, among other libraries.</p>
 
 <h1 id="install">Install</h1>
 
-<pre><code>gem install bundler jekyll --user-install
+<p>Fork <a href="https://github.com/mjames-upc/polymer-docs">https://github.com/mjames-upc/polymer-docs</a> on Github, and then clone to your local machine:</p>
+
+<pre><code>git clone https://github.com/&lt;username&gt;/polymer-docs.git
+
+gem install bundler jekyll --user-install
 npm install grunt-cli vulcanize bower compass
 npm install grunt --save-dev
 </code></pre>
 
-<p>To install globally run <code>npm install -g ...</code>.</p>
+<blockquote>
+  <p>To install these globally run <code>npm install -g ...</code></p>
+</blockquote>
 
-<p>The <code>--user-install</code> flag will install the gem to your home directory (usually <code>~/.gem/ruby/2.2.0</code>).*</p>
+<blockquote>
+  <p>The <code>--user-install</code> flag will install the gem to your home directory (usually <code>~/.gem/ruby/2.2.0</code>)</p>
+</blockquote>
 
-<h2 id="fork-httpsgithubcommjames-upcpolymer-docshttpsgithubcommjames-upcpolymer-docs-on-github"><strong>Fork</strong> <a href="https://github.com/mjames-upc/polymer-docs">https://github.com/mjames-upc/polymer-docs</a> on Github</h2>
-
-<p>and then clone your fork:</p>
-
-<pre><code>git clone https://github.com/&amp;lt;username&amp;gt;/polymer-docs.git
-cd polymer-docs
+<pre><code>cd polymer-docs
 
 bundle install
 npm install
 bower install
 
 grunt docs
-</code></pre>
-
-<h1 id="deploy-locally">Deploy Locally</h1>
-
-<pre><code>grunt
+grunt
 </code></pre>
 
 <p>and open <a href="http://127.0.0.1:4000/polymer-docs/">http://127.0.0.1:4000/polymer-docs/</a></p>
@@ -122,14 +121,14 @@ grunt gh-pages
   <li>
     <p><strong><a href="http://bower.io">Bower</a></strong> is a tool for managing JavaScript dependencies.</p>
   </li>
-  <li>
-    <p>If Ruby warns you that the user install directory is not on your
-path, add it now by adding the following to your <code>.bashrc</code> file
-(or whatever is appropriate for your development environment):</p>
-
-    <p>PATH=”$PATH:$(ruby -rubygems -e ‘puts Gem.user_dir’)/bin”</p>
-  </li>
 </ul>
+
+<blockquote>
+  <p>If Ruby warns you that the user install directory is not on your
+path, add it now by adding the following to your <code>.bashrc</code> file
+(or whatever is appropriate for your development environment):
+<code>PATH="$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin"</code></p>
+</blockquote>
 
 
     </article>
